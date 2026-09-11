@@ -1,0 +1,32 @@
+{
+  "vector_search_ms": {
+    "mean": 16.958653846153847,
+    "min": 13.04,
+    "max": 46.78
+  },
+  "graph_traversal_ms": {
+    "mean": 2.7001923076923076,
+    "min": 0.65,
+    "max": 5.42
+  },
+  "fusion_sorting_ms": {
+    "mean": 3.678269230769231,
+    "min": -27.81,
+    "max": 49.57
+  },
+  "hybrid_total_ms": {
+    "mean": 23.3375,
+    "min": 16.48,
+    "max": 67.23
+  },
+  "vector_only_ms": {
+    "mean": 17.889038461538462,
+    "min": 12.92,
+    "max": 69.48
+  },
+  "overhead_ms": {
+    "mean": 5.4475,
+    "min": -41.81,
+    "max": 49.94
+  }
+}

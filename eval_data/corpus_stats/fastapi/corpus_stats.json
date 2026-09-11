@@ -1,0 +1,92 @@
+{
+  "repo_path": "C:\\MyWork\\Projects\\RepoMind\\eval_data\\repos\\fastapi_corpus",
+  "source_files_scanned": 48,
+  "files_parsed": 48,
+  "files_with_syntax_errors": 0,
+  "ast_chunks": 385,
+  "chunk_types": {
+    "module_context": 44,
+    "function": 150,
+    "class": 109,
+    "class_header": 6,
+    "method": 73,
+    "file": 3
+  },
+  "graph_nodes": 518,
+  "graph_edges": 558,
+  "node_types": {
+    "file": 48,
+    "function": 150,
+    "class": 115,
+    "method": 205
+  },
+  "edge_types": {
+    "imports": 88,
+    "defines": 265,
+    "contains": 205
+  },
+  "depth_characteristics": {
+    "weakly_connected_components": 15,
+    "largest_component_nodes": 502,
+    "isolated_nodes": 13,
+    "largest_component_diameter": 8,
+    "largest_component_avg_shortest_path": 4.39,
+    "import_graph_files": 48,
+    "import_graph_edges": 88,
+    "import_graph_components": 15,
+    "import_graph_largest_component": 33,
+    "import_graph_diameter": 5,
+    "import_graph_avg_shortest_path": 2.305,
+    "cross_file_symbol_distance_distribution": {
+      "3": 14632,
+      "4": 55525,
+      "5": 64100,
+      "6": 24291,
+      "7": 3995,
+      "8": 40
+    },
+    "cross_file_sample_symbols": 400,
+    "top_degree_files": [
+      {
+        "file": "fastapi/routing.py",
+        "degree": 53
+      },
+      {
+        "file": "fastapi/openapi/models.py",
+        "degree": 51
+      },
+      {
+        "file": "fastapi/dependencies/utils.py",
+        "degree": 40
+      },
+      {
+        "file": "fastapi/openapi/utils.py",
+        "degree": 27
+      },
+      {
+        "file": "fastapi/_compat/v2.py",
+        "degree": 24
+      },
+      {
+        "file": "fastapi/exceptions.py",
+        "degree": 22
+      },
+      {
+        "file": "fastapi/dependencies/models.py",
+        "degree": 22
+      },
+      {
+        "file": "fastapi/utils.py",
+        "degree": 16
+      },
+      {
+        "file": "fastapi/_compat/shared.py",
+        "degree": 16
+      },
+      {
+        "file": "fastapi/params.py",
+        "degree": 15
+      }
+    ]
+  }
+}

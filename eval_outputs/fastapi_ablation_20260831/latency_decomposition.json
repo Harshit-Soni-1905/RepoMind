@@ -1,0 +1,522 @@
+[
+  {
+    "question_id": "fa_sl_001",
+    "category": "symbol_lookup",
+    "vector_search_ms": 46.78,
+    "graph_traversal_ms": 4.32,
+    "fusion_sorting_ms": -27.81,
+    "hybrid_total_ms": 23.29,
+    "vector_only_ms": 16.55,
+    "overhead_ms": 6.74
+  },
+  {
+    "question_id": "fa_sl_002",
+    "category": "symbol_lookup",
+    "vector_search_ms": 14.92,
+    "graph_traversal_ms": 2.93,
+    "fusion_sorting_ms": 3.03,
+    "hybrid_total_ms": 20.87,
+    "vector_only_ms": 14.76,
+    "overhead_ms": 6.11
+  },
+  {
+    "question_id": "fa_sl_003",
+    "category": "symbol_lookup",
+    "vector_search_ms": 15.55,
+    "graph_traversal_ms": 3.24,
+    "fusion_sorting_ms": 2.68,
+    "hybrid_total_ms": 21.47,
+    "vector_only_ms": 16.55,
+    "overhead_ms": 4.92
+  },
+  {
+    "question_id": "fa_sl_004",
+    "category": "symbol_lookup",
+    "vector_search_ms": 16.04,
+    "graph_traversal_ms": 1.62,
+    "fusion_sorting_ms": 49.57,
+    "hybrid_total_ms": 67.23,
+    "vector_only_ms": 17.29,
+    "overhead_ms": 49.94
+  },
+  {
+    "question_id": "fa_sl_005",
+    "category": "symbol_lookup",
+    "vector_search_ms": 21.33,
+    "graph_traversal_ms": 5.42,
+    "fusion_sorting_ms": 8.54,
+    "hybrid_total_ms": 35.28,
+    "vector_only_ms": 17.39,
+    "overhead_ms": 17.89
+  },
+  {
+    "question_id": "fa_sl_006",
+    "category": "symbol_lookup",
+    "vector_search_ms": 19.22,
+    "graph_traversal_ms": 5.09,
+    "fusion_sorting_ms": 5.21,
+    "hybrid_total_ms": 29.51,
+    "vector_only_ms": 17.22,
+    "overhead_ms": 12.29
+  },
+  {
+    "question_id": "fa_sl_007",
+    "category": "symbol_lookup",
+    "vector_search_ms": 17.64,
+    "graph_traversal_ms": 4.2,
+    "fusion_sorting_ms": 2.1,
+    "hybrid_total_ms": 23.95,
+    "vector_only_ms": 19.47,
+    "overhead_ms": 4.48
+  },
+  {
+    "question_id": "fa_sl_008",
+    "category": "symbol_lookup",
+    "vector_search_ms": 16.44,
+    "graph_traversal_ms": 2.37,
+    "fusion_sorting_ms": 1.68,
+    "hybrid_total_ms": 20.49,
+    "vector_only_ms": 15.46,
+    "overhead_ms": 5.04
+  },
+  {
+    "question_id": "fa_sl_009",
+    "category": "symbol_lookup",
+    "vector_search_ms": 14.47,
+    "graph_traversal_ms": 2.56,
+    "fusion_sorting_ms": 5.56,
+    "hybrid_total_ms": 22.6,
+    "vector_only_ms": 17.35,
+    "overhead_ms": 5.25
+  },
+  {
+    "question_id": "fa_sl_010",
+    "category": "symbol_lookup",
+    "vector_search_ms": 18.7,
+    "graph_traversal_ms": 2.92,
+    "fusion_sorting_ms": -0.97,
+    "hybrid_total_ms": 20.64,
+    "vector_only_ms": 15.26,
+    "overhead_ms": 5.38
+  },
+  {
+    "question_id": "fa_sl_011",
+    "category": "symbol_lookup",
+    "vector_search_ms": 15.03,
+    "graph_traversal_ms": 4.62,
+    "fusion_sorting_ms": 10.09,
+    "hybrid_total_ms": 29.73,
+    "vector_only_ms": 15.69,
+    "overhead_ms": 14.04
+  },
+  {
+    "question_id": "fa_sl_012",
+    "category": "symbol_lookup",
+    "vector_search_ms": 21.16,
+    "graph_traversal_ms": 4.15,
+    "fusion_sorting_ms": -4.42,
+    "hybrid_total_ms": 20.9,
+    "vector_only_ms": 14.54,
+    "overhead_ms": 6.36
+  },
+  {
+    "question_id": "fa_sl_013",
+    "category": "symbol_lookup",
+    "vector_search_ms": 15.53,
+    "graph_traversal_ms": 2.38,
+    "fusion_sorting_ms": 1.56,
+    "hybrid_total_ms": 19.47,
+    "vector_only_ms": 21.94,
+    "overhead_ms": -2.48
+  },
+  {
+    "question_id": "fa_sl_014",
+    "category": "symbol_lookup",
+    "vector_search_ms": 14.74,
+    "graph_traversal_ms": 2.85,
+    "fusion_sorting_ms": 7.39,
+    "hybrid_total_ms": 24.98,
+    "vector_only_ms": 19.74,
+    "overhead_ms": 5.23
+  },
+  {
+    "question_id": "fa_sl_015",
+    "category": "symbol_lookup",
+    "vector_search_ms": 18.98,
+    "graph_traversal_ms": 3.24,
+    "fusion_sorting_ms": -0.63,
+    "hybrid_total_ms": 21.59,
+    "vector_only_ms": 15.54,
+    "overhead_ms": 6.05
+  },
+  {
+    "question_id": "fa_dt_001",
+    "category": "dependency_trace",
+    "vector_search_ms": 14.19,
+    "graph_traversal_ms": 1.28,
+    "fusion_sorting_ms": 4.7,
+    "hybrid_total_ms": 20.17,
+    "vector_only_ms": 16.25,
+    "overhead_ms": 3.91
+  },
+  {
+    "question_id": "fa_dt_002",
+    "category": "dependency_trace",
+    "vector_search_ms": 16.68,
+    "graph_traversal_ms": 1.09,
+    "fusion_sorting_ms": -0.58,
+    "hybrid_total_ms": 17.19,
+    "vector_only_ms": 16.92,
+    "overhead_ms": 0.26
+  },
+  {
+    "question_id": "fa_dt_003",
+    "category": "dependency_trace",
+    "vector_search_ms": 16.38,
+    "graph_traversal_ms": 1.31,
+    "fusion_sorting_ms": -1.21,
+    "hybrid_total_ms": 16.48,
+    "vector_only_ms": 16.06,
+    "overhead_ms": 0.42
+  },
+  {
+    "question_id": "fa_dt_004",
+    "category": "dependency_trace",
+    "vector_search_ms": 13.56,
+    "graph_traversal_ms": 1.04,
+    "fusion_sorting_ms": 2.5,
+    "hybrid_total_ms": 17.1,
+    "vector_only_ms": 20.75,
+    "overhead_ms": -3.65
+  },
+  {
+    "question_id": "fa_dt_005",
+    "category": "dependency_trace",
+    "vector_search_ms": 13.91,
+    "graph_traversal_ms": 1.01,
+    "fusion_sorting_ms": 1.77,
+    "hybrid_total_ms": 16.69,
+    "vector_only_ms": 18.58,
+    "overhead_ms": -1.9
+  },
+  {
+    "question_id": "fa_dt_006",
+    "category": "dependency_trace",
+    "vector_search_ms": 14.22,
+    "graph_traversal_ms": 0.83,
+    "fusion_sorting_ms": 2.41,
+    "hybrid_total_ms": 17.46,
+    "vector_only_ms": 19.82,
+    "overhead_ms": -2.36
+  },
+  {
+    "question_id": "fa_dt_007",
+    "category": "dependency_trace",
+    "vector_search_ms": 14.55,
+    "graph_traversal_ms": 2.09,
+    "fusion_sorting_ms": 3.36,
+    "hybrid_total_ms": 20.0,
+    "vector_only_ms": 15.8,
+    "overhead_ms": 4.2
+  },
+  {
+    "question_id": "fa_dt_008",
+    "category": "dependency_trace",
+    "vector_search_ms": 13.04,
+    "graph_traversal_ms": 0.71,
+    "fusion_sorting_ms": 2.76,
+    "hybrid_total_ms": 16.51,
+    "vector_only_ms": 17.79,
+    "overhead_ms": -1.27
+  },
+  {
+    "question_id": "fa_dt_009",
+    "category": "dependency_trace",
+    "vector_search_ms": 18.33,
+    "graph_traversal_ms": 1.71,
+    "fusion_sorting_ms": -2.92,
+    "hybrid_total_ms": 17.12,
+    "vector_only_ms": 14.83,
+    "overhead_ms": 2.29
+  },
+  {
+    "question_id": "fa_dt_010",
+    "category": "dependency_trace",
+    "vector_search_ms": 19.25,
+    "graph_traversal_ms": 1.58,
+    "fusion_sorting_ms": 1.82,
+    "hybrid_total_ms": 22.64,
+    "vector_only_ms": 20.16,
+    "overhead_ms": 2.49
+  },
+  {
+    "question_id": "fa_dt_011",
+    "category": "dependency_trace",
+    "vector_search_ms": 17.5,
+    "graph_traversal_ms": 0.65,
+    "fusion_sorting_ms": 3.39,
+    "hybrid_total_ms": 21.54,
+    "vector_only_ms": 12.92,
+    "overhead_ms": 8.62
+  },
+  {
+    "question_id": "fa_cf_001",
+    "category": "cross_file",
+    "vector_search_ms": 13.94,
+    "graph_traversal_ms": 4.73,
+    "fusion_sorting_ms": 8.05,
+    "hybrid_total_ms": 26.72,
+    "vector_only_ms": 16.44,
+    "overhead_ms": 10.28
+  },
+  {
+    "question_id": "fa_cf_002",
+    "category": "cross_file",
+    "vector_search_ms": 13.38,
+    "graph_traversal_ms": 2.99,
+    "fusion_sorting_ms": 6.53,
+    "hybrid_total_ms": 22.9,
+    "vector_only_ms": 14.0,
+    "overhead_ms": 8.9
+  },
+  {
+    "question_id": "fa_cf_003",
+    "category": "cross_file",
+    "vector_search_ms": 17.62,
+    "graph_traversal_ms": 3.51,
+    "fusion_sorting_ms": 7.16,
+    "hybrid_total_ms": 28.29,
+    "vector_only_ms": 17.93,
+    "overhead_ms": 10.36
+  },
+  {
+    "question_id": "fa_cf_004",
+    "category": "cross_file",
+    "vector_search_ms": 18.93,
+    "graph_traversal_ms": 4.37,
+    "fusion_sorting_ms": -0.83,
+    "hybrid_total_ms": 22.47,
+    "vector_only_ms": 13.52,
+    "overhead_ms": 8.95
+  },
+  {
+    "question_id": "fa_cf_005",
+    "category": "cross_file",
+    "vector_search_ms": 14.06,
+    "graph_traversal_ms": 1.8,
+    "fusion_sorting_ms": 6.05,
+    "hybrid_total_ms": 21.92,
+    "vector_only_ms": 16.36,
+    "overhead_ms": 5.56
+  },
+  {
+    "question_id": "fa_cf_006",
+    "category": "cross_file",
+    "vector_search_ms": 13.86,
+    "graph_traversal_ms": 3.38,
+    "fusion_sorting_ms": 5.09,
+    "hybrid_total_ms": 22.33,
+    "vector_only_ms": 14.57,
+    "overhead_ms": 7.76
+  },
+  {
+    "question_id": "fa_cf_007",
+    "category": "cross_file",
+    "vector_search_ms": 15.52,
+    "graph_traversal_ms": 2.19,
+    "fusion_sorting_ms": 3.63,
+    "hybrid_total_ms": 21.34,
+    "vector_only_ms": 19.77,
+    "overhead_ms": 1.57
+  },
+  {
+    "question_id": "fa_cf_008",
+    "category": "cross_file",
+    "vector_search_ms": 16.47,
+    "graph_traversal_ms": 3.62,
+    "fusion_sorting_ms": 1.92,
+    "hybrid_total_ms": 22.02,
+    "vector_only_ms": 17.92,
+    "overhead_ms": 4.1
+  },
+  {
+    "question_id": "fa_cf_009",
+    "category": "cross_file",
+    "vector_search_ms": 17.27,
+    "graph_traversal_ms": 2.64,
+    "fusion_sorting_ms": 6.03,
+    "hybrid_total_ms": 25.94,
+    "vector_only_ms": 15.42,
+    "overhead_ms": 10.52
+  },
+  {
+    "question_id": "fa_cf_010",
+    "category": "cross_file",
+    "vector_search_ms": 15.15,
+    "graph_traversal_ms": 2.07,
+    "fusion_sorting_ms": 5.12,
+    "hybrid_total_ms": 22.34,
+    "vector_only_ms": 14.73,
+    "overhead_ms": 7.62
+  },
+  {
+    "question_id": "fa_cf_011",
+    "category": "cross_file",
+    "vector_search_ms": 15.75,
+    "graph_traversal_ms": 4.12,
+    "fusion_sorting_ms": 5.75,
+    "hybrid_total_ms": 25.62,
+    "vector_only_ms": 16.02,
+    "overhead_ms": 9.6
+  },
+  {
+    "question_id": "fa_cf_012",
+    "category": "cross_file",
+    "vector_search_ms": 14.84,
+    "graph_traversal_ms": 1.81,
+    "fusion_sorting_ms": 2.51,
+    "hybrid_total_ms": 19.16,
+    "vector_only_ms": 14.68,
+    "overhead_ms": 4.48
+  },
+  {
+    "question_id": "fa_cf_013",
+    "category": "cross_file",
+    "vector_search_ms": 15.76,
+    "graph_traversal_ms": 0.77,
+    "fusion_sorting_ms": 9.57,
+    "hybrid_total_ms": 26.1,
+    "vector_only_ms": 17.75,
+    "overhead_ms": 8.35
+  },
+  {
+    "question_id": "fa_cf_014",
+    "category": "cross_file",
+    "vector_search_ms": 18.12,
+    "graph_traversal_ms": 3.78,
+    "fusion_sorting_ms": -1.56,
+    "hybrid_total_ms": 20.34,
+    "vector_only_ms": 16.65,
+    "overhead_ms": 3.69
+  },
+  {
+    "question_id": "fa_cf_015",
+    "category": "cross_file",
+    "vector_search_ms": 17.77,
+    "graph_traversal_ms": 2.26,
+    "fusion_sorting_ms": 1.02,
+    "hybrid_total_ms": 21.05,
+    "vector_only_ms": 14.29,
+    "overhead_ms": 6.76
+  },
+  {
+    "question_id": "fa_bh_001",
+    "category": "behavioral",
+    "vector_search_ms": 17.37,
+    "graph_traversal_ms": 1.28,
+    "fusion_sorting_ms": -1.04,
+    "hybrid_total_ms": 17.62,
+    "vector_only_ms": 14.95,
+    "overhead_ms": 2.67
+  },
+  {
+    "question_id": "fa_bh_002",
+    "category": "behavioral",
+    "vector_search_ms": 14.95,
+    "graph_traversal_ms": 2.32,
+    "fusion_sorting_ms": 7.13,
+    "hybrid_total_ms": 24.4,
+    "vector_only_ms": 22.57,
+    "overhead_ms": 1.83
+  },
+  {
+    "question_id": "fa_bh_003",
+    "category": "behavioral",
+    "vector_search_ms": 14.97,
+    "graph_traversal_ms": 3.9,
+    "fusion_sorting_ms": 6.0,
+    "hybrid_total_ms": 24.87,
+    "vector_only_ms": 15.96,
+    "overhead_ms": 8.9
+  },
+  {
+    "question_id": "fa_bh_004",
+    "category": "behavioral",
+    "vector_search_ms": 16.97,
+    "graph_traversal_ms": 3.35,
+    "fusion_sorting_ms": 7.35,
+    "hybrid_total_ms": 27.67,
+    "vector_only_ms": 69.48,
+    "overhead_ms": -41.81
+  },
+  {
+    "question_id": "fa_bh_005",
+    "category": "behavioral",
+    "vector_search_ms": 27.57,
+    "graph_traversal_ms": 3.31,
+    "fusion_sorting_ms": -8.93,
+    "hybrid_total_ms": 21.96,
+    "vector_only_ms": 14.1,
+    "overhead_ms": 7.85
+  },
+  {
+    "question_id": "fa_bh_006",
+    "category": "behavioral",
+    "vector_search_ms": 15.11,
+    "graph_traversal_ms": 1.98,
+    "fusion_sorting_ms": 7.59,
+    "hybrid_total_ms": 24.69,
+    "vector_only_ms": 22.69,
+    "overhead_ms": 1.99
+  },
+  {
+    "question_id": "fa_bh_007",
+    "category": "behavioral",
+    "vector_search_ms": 17.02,
+    "graph_traversal_ms": 1.81,
+    "fusion_sorting_ms": 1.16,
+    "hybrid_total_ms": 20.0,
+    "vector_only_ms": 18.03,
+    "overhead_ms": 1.97
+  },
+  {
+    "question_id": "fa_bh_008",
+    "category": "behavioral",
+    "vector_search_ms": 17.96,
+    "graph_traversal_ms": 3.63,
+    "fusion_sorting_ms": 7.48,
+    "hybrid_total_ms": 29.07,
+    "vector_only_ms": 16.16,
+    "overhead_ms": 12.9
+  },
+  {
+    "question_id": "fa_bh_009",
+    "category": "behavioral",
+    "vector_search_ms": 14.65,
+    "graph_traversal_ms": 2.88,
+    "fusion_sorting_ms": 4.56,
+    "hybrid_total_ms": 22.09,
+    "vector_only_ms": 15.61,
+    "overhead_ms": 6.48
+  },
+  {
+    "question_id": "fa_bh_010",
+    "category": "behavioral",
+    "vector_search_ms": 14.36,
+    "graph_traversal_ms": 3.64,
+    "fusion_sorting_ms": 8.07,
+    "hybrid_total_ms": 26.06,
+    "vector_only_ms": 16.24,
+    "overhead_ms": 9.82
+  },
+  {
+    "question_id": "fa_bh_011",
+    "category": "behavioral",
+    "vector_search_ms": 14.34,
+    "graph_traversal_ms": 3.06,
+    "fusion_sorting_ms": 4.28,
+    "hybrid_total_ms": 21.68,
+    "vector_only_ms": 19.76,
+    "overhead_ms": 1.92
+  }
+]

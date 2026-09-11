@@ -1,0 +1,5 @@
+{"question_id": "tiny_001", "reference_answer": "foo is defined in a.py at lines 1-4.", "key_facts": ["foo defined in a.py"], "required_citations": ["a.py:1-4"]}
+{"question_id": "tiny_002", "reference_answer": "foo is called by bar in a.py at lines 6-8.", "key_facts": ["bar calls foo", "in a.py"], "required_citations": ["a.py:6-8"]}
+{"question_id": "tiny_003", "reference_answer": "baz imports bar from a in b.py at line 1.", "key_facts": ["baz imports bar", "from a"], "required_citations": ["b.py:1"]}
+{"question_id": "tiny_004", "reference_answer": "baz calls bar which calls foo. The chain is baz -> bar -> foo across a.py and b.py.", "key_facts": ["baz calls bar", "bar calls foo", "cross-file chain"], "required_citations": ["a.py:1-4", "a.py:6-8", "b.py:3-5"]}
+{"question_id": "tiny_005", "reference_answer": "No, there is no function called qux in this repository.", "key_facts": ["qux does not exist"], "required_citations": []}

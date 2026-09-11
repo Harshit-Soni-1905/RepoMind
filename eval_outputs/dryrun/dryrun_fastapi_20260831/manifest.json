@@ -1,0 +1,51 @@
+{
+  "experiment_id": "dryrun_fastapi_20260831",
+  "timestamp": "2026-08-31T07:22:50.363078Z",
+  "git_commit": "unknown",
+  "config": {
+    "repos": [
+      "C:\\MyWork\\Projects\\RepoMind\\eval_data\\repos\\fastapi_corpus"
+    ],
+    "corpus_provenance": {
+      "corpus_name": "fastapi",
+      "upstream_repo": "https://github.com/tiangolo/fastapi.git",
+      "upstream_tag": "0.141.1",
+      "upstream_commit": "95f8322ee1dcda7ceace7b1c4f6c9915b36d748f",
+      "upstream_commit_date": "2026-07-29T17:15:38+00:00",
+      "upstream_commit_subject": "Release version 0.141.1 (#16106)",
+      "license": "MIT",
+      "license_holder": "Copyright (c) 2018 Sebastian Ramirez",
+      "corpus_scope": "The fastapi/ package directory only. Tests (593 files), docs_src/ and scripts/ are deliberately excluded from the retrieval corpus.",
+      "why_scoped": "Indexing the full repo root would add 593 test files and ~500 docs_src example files, which would (a) dominate the corpus with non-library code and (b) turn fastapi/__init__.py into an extreme import hub, flattening graph corroboration. Scoping is applied identically to both the vector_only and hybrid systems, so it cannot bias the comparison.",
+      "why_copied_rather_than_pointing_at_the_package_dir": "CodeGraphBuilder resolves an absolute import such as 'fastapi.routing' by matching it against relative file paths. Scanning .../fastapi/fastapi directly would yield file IDs like 'routing.py' with module names like 'routing', so FastAPI's absolute self-imports would not resolve and almost no IMPORTS edges would be created. Copying the package so the corpus root CONTAINS fastapi/ preserves file IDs of the form 'fastapi/routing.py', which resolve correctly.",
+      "reproduction": [
+        "git clone --depth 1 --branch 0.141.1 https://github.com/tiangolo/fastapi.git eval_data/repos/fastapi",
+        "mkdir -p eval_data/repos/fastapi_corpus",
+        "cp -r eval_data/repos/fastapi/fastapi eval_data/repos/fastapi_corpus/fastapi",
+        "cp eval_data/repos/fastapi/LICENSE eval_data/repos/fastapi_corpus/LICENSE"
+      ],
+      "verify": "cd eval_data/repos/fastapi && git rev-parse HEAD  ->  95f8322ee1dcda7ceace7b1c4f6c9915b36d748f"
+    },
+    "questions_file": "eval_data\\questions\\fastapi_corpus_v1.jsonl",
+    "answers_file": "eval_data\\answers\\fastapi_corpus_v1.jsonl",
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "vector_top_k": 5,
+    "graph_depth": 3,
+    "fusion_weights": {
+      "vector": 0.7,
+      "graph": 0.3
+    }
+  },
+  "systems": [
+    "vector_only"
+  ],
+  "metrics_computed": [
+    "precision_at_5",
+    "recall_at_5",
+    "ndcg_at_5"
+  ],
+  "environment": {
+    "python": "3.14.7",
+    "platform": "win32"
+  }
+}

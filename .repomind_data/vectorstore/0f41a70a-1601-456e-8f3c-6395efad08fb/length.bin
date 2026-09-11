@@ -1,0 +1,8 @@
+    def _frontend_match_is_more_specific(
+        self, child_scope: Scope, previous_child_scope: Scope
+    ) -> bool:
+        specificity = _frontend_scope_specificity(child_scope)
+        previous_specificity = _frontend_scope_specificity(previous_child_scope)
+        if specificity is None or previous_specificity is None:
+            return False
+        return specificity > previous_specificit

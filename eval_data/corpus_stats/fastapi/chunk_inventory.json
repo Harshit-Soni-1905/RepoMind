@@ -1,0 +1,3467 @@
+[
+  {
+    "chunk_id": "fastapi/__init__.py::module_context",
+    "filepath": "fastapi/__init__.py",
+    "chunk_type": "module_context",
+    "symbol_name": null,
+    "start_line": 1,
+    "end_line": 25,
+    "has_docstring": true
+  },
+  {
+    "chunk_id": "fastapi/__main__.py::module_context",
+    "filepath": "fastapi/__main__.py",
+    "chunk_type": "module_context",
+    "symbol_name": null,
+    "start_line": 1,
+    "end_line": 1,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/_compat/__init__.py::module_context",
+    "filepath": "fastapi/_compat/__init__.py",
+    "chunk_type": "module_context",
+    "symbol_name": null,
+    "start_line": 1,
+    "end_line": 38,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/_compat/shared.py::module_context",
+    "filepath": "fastapi/_compat/shared.py",
+    "chunk_type": "module_context",
+    "symbol_name": null,
+    "start_line": 1,
+    "end_line": 20,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/_compat/shared.py::lenient_issubclass",
+    "filepath": "fastapi/_compat/shared.py",
+    "chunk_type": "function",
+    "symbol_name": "lenient_issubclass",
+    "start_line": 47,
+    "end_line": 55,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/_compat/shared.py::_annotation_is_sequence",
+    "filepath": "fastapi/_compat/shared.py",
+    "chunk_type": "function",
+    "symbol_name": "_annotation_is_sequence",
+    "start_line": 58,
+    "end_line": 61,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/_compat/shared.py::field_annotation_is_sequence",
+    "filepath": "fastapi/_compat/shared.py",
+    "chunk_type": "function",
+    "symbol_name": "field_annotation_is_sequence",
+    "start_line": 64,
+    "end_line": 77,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/_compat/shared.py::value_is_sequence",
+    "filepath": "fastapi/_compat/shared.py",
+    "chunk_type": "function",
+    "symbol_name": "value_is_sequence",
+    "start_line": 80,
+    "end_line": 81,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/_compat/shared.py::_annotation_is_complex",
+    "filepath": "fastapi/_compat/shared.py",
+    "chunk_type": "function",
+    "symbol_name": "_annotation_is_complex",
+    "start_line": 84,
+    "end_line": 89,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/_compat/shared.py::field_annotation_is_complex",
+    "filepath": "fastapi/_compat/shared.py",
+    "chunk_type": "function",
+    "symbol_name": "field_annotation_is_complex",
+    "start_line": 92,
+    "end_line": 105,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/_compat/shared.py::field_annotation_is_scalar",
+    "filepath": "fastapi/_compat/shared.py",
+    "chunk_type": "function",
+    "symbol_name": "field_annotation_is_scalar",
+    "start_line": 108,
+    "end_line": 110,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/_compat/shared.py::field_annotation_is_scalar_sequence",
+    "filepath": "fastapi/_compat/shared.py",
+    "chunk_type": "function",
+    "symbol_name": "field_annotation_is_scalar_sequence",
+    "start_line": 113,
+    "end_line": 131,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/_compat/shared.py::is_bytes_or_nonable_bytes_annotation",
+    "filepath": "fastapi/_compat/shared.py",
+    "chunk_type": "function",
+    "symbol_name": "is_bytes_or_nonable_bytes_annotation",
+    "start_line": 134,
+    "end_line": 142,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/_compat/shared.py::is_uploadfile_or_nonable_uploadfile_annotation",
+    "filepath": "fastapi/_compat/shared.py",
+    "chunk_type": "function",
+    "symbol_name": "is_uploadfile_or_nonable_uploadfile_annotation",
+    "start_line": 145,
+    "end_line": 153,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/_compat/shared.py::is_bytes_sequence_annotation",
+    "filepath": "fastapi/_compat/shared.py",
+    "chunk_type": "function",
+    "symbol_name": "is_bytes_sequence_annotation",
+    "start_line": 156,
+    "end_line": 168,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/_compat/shared.py::is_uploadfile_sequence_annotation",
+    "filepath": "fastapi/_compat/shared.py",
+    "chunk_type": "function",
+    "symbol_name": "is_uploadfile_sequence_annotation",
+    "start_line": 171,
+    "end_line": 183,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/_compat/shared.py::is_pydantic_v1_model_instance",
+    "filepath": "fastapi/_compat/shared.py",
+    "chunk_type": "function",
+    "symbol_name": "is_pydantic_v1_model_instance",
+    "start_line": 186,
+    "end_line": 195,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/_compat/shared.py::is_pydantic_v1_model_class",
+    "filepath": "fastapi/_compat/shared.py",
+    "chunk_type": "function",
+    "symbol_name": "is_pydantic_v1_model_class",
+    "start_line": 198,
+    "end_line": 207,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/_compat/shared.py::annotation_is_pydantic_v1",
+    "filepath": "fastapi/_compat/shared.py",
+    "chunk_type": "function",
+    "symbol_name": "annotation_is_pydantic_v1",
+    "start_line": 210,
+    "end_line": 222,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/_compat/v2.py::module_context",
+    "filepath": "fastapi/_compat/v2.py",
+    "chunk_type": "module_context",
+    "symbol_name": null,
+    "start_line": 1,
+    "end_line": 35,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/_compat/v2.py::evaluate_forwardref",
+    "filepath": "fastapi/_compat/v2.py",
+    "chunk_type": "function",
+    "symbol_name": "evaluate_forwardref",
+    "start_line": 43,
+    "end_line": 54,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/_compat/v2.py::GenerateJsonSchema",
+    "filepath": "fastapi/_compat/v2.py",
+    "chunk_type": "class",
+    "symbol_name": "GenerateJsonSchema",
+    "start_line": 57,
+    "end_line": 70,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/_compat/v2.py::asdict",
+    "filepath": "fastapi/_compat/v2.py",
+    "chunk_type": "function",
+    "symbol_name": "asdict",
+    "start_line": 100,
+    "end_line": 110,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/_compat/v2.py::ModelField",
+    "filepath": "fastapi/_compat/v2.py",
+    "chunk_type": "class",
+    "symbol_name": "ModelField",
+    "start_line": 114,
+    "end_line": 244,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/_compat/v2.py::_has_computed_fields",
+    "filepath": "fastapi/_compat/v2.py",
+    "chunk_type": "function",
+    "symbol_name": "_has_computed_fields",
+    "start_line": 247,
+    "end_line": 251,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/_compat/v2.py::get_schema_from_model_field",
+    "filepath": "fastapi/_compat/v2.py",
+    "chunk_type": "function",
+    "symbol_name": "get_schema_from_model_field",
+    "start_line": 254,
+    "end_line": 282,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/_compat/v2.py::get_definitions",
+    "filepath": "fastapi/_compat/v2.py",
+    "chunk_type": "function",
+    "symbol_name": "get_definitions",
+    "start_line": 285,
+    "end_line": 346,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/_compat/v2.py::is_scalar_field",
+    "filepath": "fastapi/_compat/v2.py",
+    "chunk_type": "function",
+    "symbol_name": "is_scalar_field",
+    "start_line": 349,
+    "end_line": 354,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/_compat/v2.py::copy_field_info",
+    "filepath": "fastapi/_compat/v2.py",
+    "chunk_type": "function",
+    "symbol_name": "copy_field_info",
+    "start_line": 357,
+    "end_line": 363,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/_compat/v2.py::serialize_sequence_value",
+    "filepath": "fastapi/_compat/v2.py",
+    "chunk_type": "function",
+    "symbol_name": "serialize_sequence_value",
+    "start_line": 366,
+    "end_line": 376,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/_compat/v2.py::get_missing_field_error",
+    "filepath": "fastapi/_compat/v2.py",
+    "chunk_type": "function",
+    "symbol_name": "get_missing_field_error",
+    "start_line": 379,
+    "end_line": 384,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/_compat/v2.py::create_body_model",
+    "filepath": "fastapi/_compat/v2.py",
+    "chunk_type": "function",
+    "symbol_name": "create_body_model",
+    "start_line": 387,
+    "end_line": 392,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/_compat/v2.py::get_model_fields",
+    "filepath": "fastapi/_compat/v2.py",
+    "chunk_type": "function",
+    "symbol_name": "get_model_fields",
+    "start_line": 395,
+    "end_line": 410,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/_compat/v2.py::get_cached_model_fields",
+    "filepath": "fastapi/_compat/v2.py",
+    "chunk_type": "function",
+    "symbol_name": "get_cached_model_fields",
+    "start_line": 414,
+    "end_line": 415,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/_compat/v2.py::normalize_name",
+    "filepath": "fastapi/_compat/v2.py",
+    "chunk_type": "function",
+    "symbol_name": "normalize_name",
+    "start_line": 425,
+    "end_line": 426,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/_compat/v2.py::get_model_name_map",
+    "filepath": "fastapi/_compat/v2.py",
+    "chunk_type": "function",
+    "symbol_name": "get_model_name_map",
+    "start_line": 429,
+    "end_line": 434,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/_compat/v2.py::get_flat_models_from_model",
+    "filepath": "fastapi/_compat/v2.py",
+    "chunk_type": "function",
+    "symbol_name": "get_flat_models_from_model",
+    "start_line": 437,
+    "end_line": 443,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/_compat/v2.py::get_flat_models_from_annotation",
+    "filepath": "fastapi/_compat/v2.py",
+    "chunk_type": "function",
+    "symbol_name": "get_flat_models_from_annotation",
+    "start_line": 446,
+    "end_line": 459,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/_compat/v2.py::get_flat_models_from_field",
+    "filepath": "fastapi/_compat/v2.py",
+    "chunk_type": "function",
+    "symbol_name": "get_flat_models_from_field",
+    "start_line": 462,
+    "end_line": 475,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/_compat/v2.py::get_flat_models_from_fields",
+    "filepath": "fastapi/_compat/v2.py",
+    "chunk_type": "function",
+    "symbol_name": "get_flat_models_from_fields",
+    "start_line": 478,
+    "end_line": 483,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/_compat/v2.py::_regenerate_error_with_loc",
+    "filepath": "fastapi/_compat/v2.py",
+    "chunk_type": "function",
+    "symbol_name": "_regenerate_error_with_loc",
+    "start_line": 486,
+    "end_line": 493,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/applications.py::module_context",
+    "filepath": "fastapi/applications.py",
+    "chunk_type": "module_context",
+    "symbol_name": null,
+    "start_line": 1,
+    "end_line": 37,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/applications.py::FastAPI__header",
+    "filepath": "fastapi/applications.py",
+    "chunk_type": "class_header",
+    "symbol_name": "FastAPI",
+    "start_line": 42,
+    "end_line": 57,
+    "has_docstring": true
+  },
+  {
+    "chunk_id": "fastapi/applications.py::FastAPI.__init__",
+    "filepath": "fastapi/applications.py",
+    "chunk_type": "method",
+    "symbol_name": "__init__",
+    "start_line": 58,
+    "end_line": 1018,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/applications.py::FastAPI.build_middleware_stack",
+    "filepath": "fastapi/applications.py",
+    "chunk_type": "method",
+    "symbol_name": "build_middleware_stack",
+    "start_line": 1020,
+    "end_line": 1068,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/applications.py::FastAPI.openapi",
+    "filepath": "fastapi/applications.py",
+    "chunk_type": "method",
+    "symbol_name": "openapi",
+    "start_line": 1070,
+    "end_line": 1103,
+    "has_docstring": true
+  },
+  {
+    "chunk_id": "fastapi/applications.py::FastAPI.setup",
+    "filepath": "fastapi/applications.py",
+    "chunk_type": "method",
+    "symbol_name": "setup",
+    "start_line": 1105,
+    "end_line": 1158,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/applications.py::FastAPI.__call__",
+    "filepath": "fastapi/applications.py",
+    "chunk_type": "method",
+    "symbol_name": "__call__",
+    "start_line": 1160,
+    "end_line": 1163,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/applications.py::FastAPI.add_api_route",
+    "filepath": "fastapi/applications.py",
+    "chunk_type": "method",
+    "symbol_name": "add_api_route",
+    "start_line": 1165,
+    "end_line": 1220,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/applications.py::FastAPI.frontend",
+    "filepath": "fastapi/applications.py",
+    "chunk_type": "method",
+    "symbol_name": "frontend",
+    "start_line": 1222,
+    "end_line": 1299,
+    "has_docstring": true
+  },
+  {
+    "chunk_id": "fastapi/applications.py::FastAPI.api_route",
+    "filepath": "fastapi/applications.py",
+    "chunk_type": "method",
+    "symbol_name": "api_route",
+    "start_line": 1301,
+    "end_line": 1359,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/applications.py::FastAPI.add_api_websocket_route",
+    "filepath": "fastapi/applications.py",
+    "chunk_type": "method",
+    "symbol_name": "add_api_websocket_route",
+    "start_line": 1361,
+    "end_line": 1374,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/applications.py::FastAPI.websocket",
+    "filepath": "fastapi/applications.py",
+    "chunk_type": "method",
+    "symbol_name": "websocket",
+    "start_line": 1376,
+    "end_line": 1439,
+    "has_docstring": true
+  },
+  {
+    "chunk_id": "fastapi/applications.py::FastAPI.include_router",
+    "filepath": "fastapi/applications.py",
+    "chunk_type": "method",
+    "symbol_name": "include_router",
+    "start_line": 1441,
+    "end_line": 1644,
+    "has_docstring": true
+  },
+  {
+    "chunk_id": "fastapi/applications.py::FastAPI.get",
+    "filepath": "fastapi/applications.py",
+    "chunk_type": "method",
+    "symbol_name": "get",
+    "start_line": 1646,
+    "end_line": 2017,
+    "has_docstring": true
+  },
+  {
+    "chunk_id": "fastapi/applications.py::FastAPI.put",
+    "filepath": "fastapi/applications.py",
+    "chunk_type": "method",
+    "symbol_name": "put",
+    "start_line": 2019,
+    "end_line": 2395,
+    "has_docstring": true
+  },
+  {
+    "chunk_id": "fastapi/applications.py::FastAPI.post",
+    "filepath": "fastapi/applications.py",
+    "chunk_type": "method",
+    "symbol_name": "post",
+    "start_line": 2397,
+    "end_line": 2773,
+    "has_docstring": true
+  },
+  {
+    "chunk_id": "fastapi/applications.py::FastAPI.delete",
+    "filepath": "fastapi/applications.py",
+    "chunk_type": "method",
+    "symbol_name": "delete",
+    "start_line": 2775,
+    "end_line": 3146,
+    "has_docstring": true
+  },
+  {
+    "chunk_id": "fastapi/applications.py::FastAPI.options",
+    "filepath": "fastapi/applications.py",
+    "chunk_type": "method",
+    "symbol_name": "options",
+    "start_line": 3148,
+    "end_line": 3519,
+    "has_docstring": true
+  },
+  {
+    "chunk_id": "fastapi/applications.py::FastAPI.head",
+    "filepath": "fastapi/applications.py",
+    "chunk_type": "method",
+    "symbol_name": "head",
+    "start_line": 3521,
+    "end_line": 3892,
+    "has_docstring": true
+  },
+  {
+    "chunk_id": "fastapi/applications.py::FastAPI.patch",
+    "filepath": "fastapi/applications.py",
+    "chunk_type": "method",
+    "symbol_name": "patch",
+    "start_line": 3894,
+    "end_line": 4270,
+    "has_docstring": true
+  },
+  {
+    "chunk_id": "fastapi/applications.py::FastAPI.trace",
+    "filepath": "fastapi/applications.py",
+    "chunk_type": "method",
+    "symbol_name": "trace",
+    "start_line": 4272,
+    "end_line": 4643,
+    "has_docstring": true
+  },
+  {
+    "chunk_id": "fastapi/applications.py::FastAPI.websocket_route",
+    "filepath": "fastapi/applications.py",
+    "chunk_type": "method",
+    "symbol_name": "websocket_route",
+    "start_line": 4645,
+    "end_line": 4652,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/applications.py::FastAPI.on_event",
+    "filepath": "fastapi/applications.py",
+    "chunk_type": "method",
+    "symbol_name": "on_event",
+    "start_line": 4662,
+    "end_line": 4681,
+    "has_docstring": true
+  },
+  {
+    "chunk_id": "fastapi/applications.py::FastAPI.middleware",
+    "filepath": "fastapi/applications.py",
+    "chunk_type": "method",
+    "symbol_name": "middleware",
+    "start_line": 4683,
+    "end_line": 4727,
+    "has_docstring": true
+  },
+  {
+    "chunk_id": "fastapi/applications.py::FastAPI.exception_handler",
+    "filepath": "fastapi/applications.py",
+    "chunk_type": "method",
+    "symbol_name": "exception_handler",
+    "start_line": 4729,
+    "end_line": 4774,
+    "has_docstring": true
+  },
+  {
+    "chunk_id": "fastapi/background.py::module_context",
+    "filepath": "fastapi/background.py",
+    "chunk_type": "module_context",
+    "symbol_name": null,
+    "start_line": 1,
+    "end_line": 6,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/background.py::BackgroundTasks",
+    "filepath": "fastapi/background.py",
+    "chunk_type": "class",
+    "symbol_name": "BackgroundTasks",
+    "start_line": 11,
+    "end_line": 61,
+    "has_docstring": true
+  },
+  {
+    "chunk_id": "fastapi/cli.py::module_context",
+    "filepath": "fastapi/cli.py",
+    "chunk_type": "module_context",
+    "symbol_name": null,
+    "start_line": 1,
+    "end_line": 2,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/cli.py::main",
+    "filepath": "fastapi/cli.py",
+    "chunk_type": "function",
+    "symbol_name": "main",
+    "start_line": 8,
+    "end_line": 13,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/concurrency.py::module_context",
+    "filepath": "fastapi/concurrency.py",
+    "chunk_type": "module_context",
+    "symbol_name": null,
+    "start_line": 1,
+    "end_line": 10,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/concurrency.py::contextmanager_in_threadpool",
+    "filepath": "fastapi/concurrency.py",
+    "chunk_type": "function",
+    "symbol_name": "contextmanager_in_threadpool",
+    "start_line": 18,
+    "end_line": 41,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/datastructures.py::module_context",
+    "filepath": "fastapi/datastructures.py",
+    "chunk_type": "module_context",
+    "symbol_name": null,
+    "start_line": 1,
+    "end_line": 18,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/datastructures.py::UploadFile",
+    "filepath": "fastapi/datastructures.py",
+    "chunk_type": "class",
+    "symbol_name": "UploadFile",
+    "start_line": 21,
+    "end_line": 150,
+    "has_docstring": true
+  },
+  {
+    "chunk_id": "fastapi/datastructures.py::DefaultPlaceholder",
+    "filepath": "fastapi/datastructures.py",
+    "chunk_type": "class",
+    "symbol_name": "DefaultPlaceholder",
+    "start_line": 153,
+    "end_line": 168,
+    "has_docstring": true
+  },
+  {
+    "chunk_id": "fastapi/datastructures.py::Default",
+    "filepath": "fastapi/datastructures.py",
+    "chunk_type": "function",
+    "symbol_name": "Default",
+    "start_line": 174,
+    "end_line": 181,
+    "has_docstring": true
+  },
+  {
+    "chunk_id": "fastapi/dependencies/__init__.py::file",
+    "filepath": "fastapi/dependencies/__init__.py",
+    "chunk_type": "file",
+    "symbol_name": null,
+    "start_line": 1,
+    "end_line": 1,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/dependencies/models.py::module_context",
+    "filepath": "fastapi/dependencies/models.py",
+    "chunk_type": "module_context",
+    "symbol_name": null,
+    "start_line": 1,
+    "end_line": 15,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/dependencies/models.py::_unwrapped_call",
+    "filepath": "fastapi/dependencies/models.py",
+    "chunk_type": "function",
+    "symbol_name": "_unwrapped_call",
+    "start_line": 18,
+    "end_line": 22,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/dependencies/models.py::_impartial",
+    "filepath": "fastapi/dependencies/models.py",
+    "chunk_type": "function",
+    "symbol_name": "_impartial",
+    "start_line": 25,
+    "end_line": 28,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/dependencies/models.py::Dependant",
+    "filepath": "fastapi/dependencies/models.py",
+    "chunk_type": "class",
+    "symbol_name": "Dependant",
+    "start_line": 32,
+    "end_line": 51,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/dependencies/models.py::_CallIdentity",
+    "filepath": "fastapi/dependencies/models.py",
+    "chunk_type": "class",
+    "symbol_name": "_CallIdentity",
+    "start_line": 58,
+    "end_line": 68,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/dependencies/models.py::_get_oauth_scopes",
+    "filepath": "fastapi/dependencies/models.py",
+    "chunk_type": "function",
+    "symbol_name": "_get_oauth_scopes",
+    "start_line": 71,
+    "end_line": 79,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/dependencies/models.py::_get_cache_key",
+    "filepath": "fastapi/dependencies/models.py",
+    "chunk_type": "function",
+    "symbol_name": "_get_cache_key",
+    "start_line": 82,
+    "end_line": 96,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/dependencies/models.py::_uses_scopes",
+    "filepath": "fastapi/dependencies/models.py",
+    "chunk_type": "function",
+    "symbol_name": "_uses_scopes",
+    "start_line": 99,
+    "end_line": 120,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/dependencies/models.py::_is_security_scheme",
+    "filepath": "fastapi/dependencies/models.py",
+    "chunk_type": "function",
+    "symbol_name": "_is_security_scheme",
+    "start_line": 123,
+    "end_line": 127,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/dependencies/models.py::_get_security_scheme",
+    "filepath": "fastapi/dependencies/models.py",
+    "chunk_type": "function",
+    "symbol_name": "_get_security_scheme",
+    "start_line": 130,
+    "end_line": 134,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/dependencies/models.py::_is_gen_callable_cached",
+    "filepath": "fastapi/dependencies/models.py",
+    "chunk_type": "function",
+    "symbol_name": "_is_gen_callable_cached",
+    "start_line": 138,
+    "end_line": 158,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/dependencies/models.py::_is_gen_callable",
+    "filepath": "fastapi/dependencies/models.py",
+    "chunk_type": "function",
+    "symbol_name": "_is_gen_callable",
+    "start_line": 161,
+    "end_line": 164,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/dependencies/models.py::_is_async_gen_callable_cached",
+    "filepath": "fastapi/dependencies/models.py",
+    "chunk_type": "function",
+    "symbol_name": "_is_async_gen_callable_cached",
+    "start_line": 168,
+    "end_line": 188,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/dependencies/models.py::_is_async_gen_callable",
+    "filepath": "fastapi/dependencies/models.py",
+    "chunk_type": "function",
+    "symbol_name": "_is_async_gen_callable",
+    "start_line": 191,
+    "end_line": 194,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/dependencies/models.py::_is_coroutine_callable_cached",
+    "filepath": "fastapi/dependencies/models.py",
+    "chunk_type": "function",
+    "symbol_name": "_is_coroutine_callable_cached",
+    "start_line": 198,
+    "end_line": 220,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/dependencies/models.py::_is_coroutine_callable",
+    "filepath": "fastapi/dependencies/models.py",
+    "chunk_type": "function",
+    "symbol_name": "_is_coroutine_callable",
+    "start_line": 223,
+    "end_line": 226,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/dependencies/models.py::_get_computed_scope",
+    "filepath": "fastapi/dependencies/models.py",
+    "chunk_type": "function",
+    "symbol_name": "_get_computed_scope",
+    "start_line": 229,
+    "end_line": 234,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/dependencies/utils.py::module_context",
+    "filepath": "fastapi/dependencies/utils.py",
+    "chunk_type": "module_context",
+    "symbol_name": null,
+    "start_line": 1,
+    "end_line": 86,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/dependencies/utils.py::ensure_multipart_is_installed",
+    "filepath": "fastapi/dependencies/utils.py",
+    "chunk_type": "function",
+    "symbol_name": "ensure_multipart_is_installed",
+    "start_line": 103,
+    "end_line": 129,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/dependencies/utils.py::get_parameterless_sub_dependant",
+    "filepath": "fastapi/dependencies/utils.py",
+    "chunk_type": "function",
+    "symbol_name": "get_parameterless_sub_dependant",
+    "start_line": 132,
+    "end_line": 144,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/dependencies/utils.py::_get_flat_body_params",
+    "filepath": "fastapi/dependencies/utils.py",
+    "chunk_type": "function",
+    "symbol_name": "_get_flat_body_params",
+    "start_line": 147,
+    "end_line": 154,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/dependencies/utils.py::_get_flat_fields_from_params",
+    "filepath": "fastapi/dependencies/utils.py",
+    "chunk_type": "function",
+    "symbol_name": "_get_flat_fields_from_params",
+    "start_line": 157,
+    "end_line": 166,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/dependencies/utils.py::get_flat_params",
+    "filepath": "fastapi/dependencies/utils.py",
+    "chunk_type": "function",
+    "symbol_name": "get_flat_params",
+    "start_line": 169,
+    "end_line": 195,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/dependencies/utils.py::_get_signature",
+    "filepath": "fastapi/dependencies/utils.py",
+    "chunk_type": "function",
+    "symbol_name": "_get_signature",
+    "start_line": 198,
+    "end_line": 210,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/dependencies/utils.py::get_typed_signature",
+    "filepath": "fastapi/dependencies/utils.py",
+    "chunk_type": "function",
+    "symbol_name": "get_typed_signature",
+    "start_line": 213,
+    "end_line": 227,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/dependencies/utils.py::get_typed_annotation",
+    "filepath": "fastapi/dependencies/utils.py",
+    "chunk_type": "function",
+    "symbol_name": "get_typed_annotation",
+    "start_line": 230,
+    "end_line": 236,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/dependencies/utils.py::get_typed_return_annotation",
+    "filepath": "fastapi/dependencies/utils.py",
+    "chunk_type": "function",
+    "symbol_name": "get_typed_return_annotation",
+    "start_line": 239,
+    "end_line": 248,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/dependencies/utils.py::get_stream_item_type",
+    "filepath": "fastapi/dependencies/utils.py",
+    "chunk_type": "function",
+    "symbol_name": "get_stream_item_type",
+    "start_line": 261,
+    "end_line": 268,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/dependencies/utils.py::get_dependant",
+    "filepath": "fastapi/dependencies/utils.py",
+    "chunk_type": "function",
+    "symbol_name": "get_dependant",
+    "start_line": 271,
+    "end_line": 347,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/dependencies/utils.py::add_non_field_param_to_dependency",
+    "filepath": "fastapi/dependencies/utils.py",
+    "chunk_type": "function",
+    "symbol_name": "add_non_field_param_to_dependency",
+    "start_line": 350,
+    "end_line": 371,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/dependencies/utils.py::ParamDetails",
+    "filepath": "fastapi/dependencies/utils.py",
+    "chunk_type": "class",
+    "symbol_name": "ParamDetails",
+    "start_line": 375,
+    "end_line": 378,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/dependencies/utils.py::analyze_param",
+    "filepath": "fastapi/dependencies/utils.py",
+    "chunk_type": "function",
+    "symbol_name": "analyze_param",
+    "start_line": 381,
+    "end_line": 547,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/dependencies/utils.py::add_param_to_fields",
+    "filepath": "fastapi/dependencies/utils.py",
+    "chunk_type": "function",
+    "symbol_name": "add_param_to_fields",
+    "start_line": 550,
+    "end_line": 563,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/dependencies/utils.py::_solve_generator",
+    "filepath": "fastapi/dependencies/utils.py",
+    "chunk_type": "function",
+    "symbol_name": "_solve_generator",
+    "start_line": 566,
+    "end_line": 574,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/dependencies/utils.py::SolvedDependency",
+    "filepath": "fastapi/dependencies/utils.py",
+    "chunk_type": "class",
+    "symbol_name": "SolvedDependency",
+    "start_line": 578,
+    "end_line": 583,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/dependencies/utils.py::solve_dependencies",
+    "filepath": "fastapi/dependencies/utils.py",
+    "chunk_type": "function",
+    "symbol_name": "solve_dependencies",
+    "start_line": 586,
+    "end_line": 731,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/dependencies/utils.py::_validate_value_with_model_field",
+    "filepath": "fastapi/dependencies/utils.py",
+    "chunk_type": "function",
+    "symbol_name": "_validate_value_with_model_field",
+    "start_line": 734,
+    "end_line": 742,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/dependencies/utils.py::_is_json_field",
+    "filepath": "fastapi/dependencies/utils.py",
+    "chunk_type": "function",
+    "symbol_name": "_is_json_field",
+    "start_line": 745,
+    "end_line": 746,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/dependencies/utils.py::_get_multidict_value",
+    "filepath": "fastapi/dependencies/utils.py",
+    "chunk_type": "function",
+    "symbol_name": "_get_multidict_value",
+    "start_line": 749,
+    "end_line": 777,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/dependencies/utils.py::request_params_to_args",
+    "filepath": "fastapi/dependencies/utils.py",
+    "chunk_type": "function",
+    "symbol_name": "request_params_to_args",
+    "start_line": 780,
+    "end_line": 866,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/dependencies/utils.py::is_union_of_base_models",
+    "filepath": "fastapi/dependencies/utils.py",
+    "chunk_type": "function",
+    "symbol_name": "is_union_of_base_models",
+    "start_line": 869,
+    "end_line": 885,
+    "has_docstring": true
+  },
+  {
+    "chunk_id": "fastapi/dependencies/utils.py::_should_embed_body_fields",
+    "filepath": "fastapi/dependencies/utils.py",
+    "chunk_type": "function",
+    "symbol_name": "_should_embed_body_fields",
+    "start_line": 888,
+    "end_line": 909,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/dependencies/utils.py::_extract_form_body",
+    "filepath": "fastapi/dependencies/utils.py",
+    "chunk_type": "function",
+    "symbol_name": "_extract_form_body",
+    "start_line": 912,
+    "end_line": 948,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/dependencies/utils.py::request_body_to_args",
+    "filepath": "fastapi/dependencies/utils.py",
+    "chunk_type": "function",
+    "symbol_name": "request_body_to_args",
+    "start_line": 951,
+    "end_line": 998,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/dependencies/utils.py::_get_body_field",
+    "filepath": "fastapi/dependencies/utils.py",
+    "chunk_type": "function",
+    "symbol_name": "_get_body_field",
+    "start_line": 1001,
+    "end_line": 1048,
+    "has_docstring": true
+  },
+  {
+    "chunk_id": "fastapi/dependencies/utils.py::get_validation_alias",
+    "filepath": "fastapi/dependencies/utils.py",
+    "chunk_type": "function",
+    "symbol_name": "get_validation_alias",
+    "start_line": 1051,
+    "end_line": 1053,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/encoders.py::module_context",
+    "filepath": "fastapi/encoders.py",
+    "chunk_type": "module_context",
+    "symbol_name": null,
+    "start_line": 1,
+    "end_line": 45,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/encoders.py::Color",
+    "filepath": "fastapi/encoders.py",
+    "chunk_type": "class",
+    "symbol_name": "Color",
+    "start_line": 39,
+    "end_line": 40,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/encoders.py::PyExtraColor",
+    "filepath": "fastapi/encoders.py",
+    "chunk_type": "class",
+    "symbol_name": "PyExtraColor",
+    "start_line": 48,
+    "end_line": 49,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/encoders.py::isoformat",
+    "filepath": "fastapi/encoders.py",
+    "chunk_type": "function",
+    "symbol_name": "isoformat",
+    "start_line": 53,
+    "end_line": 54,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/encoders.py::decimal_encoder",
+    "filepath": "fastapi/encoders.py",
+    "chunk_type": "function",
+    "symbol_name": "decimal_encoder",
+    "start_line": 59,
+    "end_line": 81,
+    "has_docstring": true
+  },
+  {
+    "chunk_id": "fastapi/encoders.py::generate_encoders_by_class_tuples",
+    "filepath": "fastapi/encoders.py",
+    "chunk_type": "function",
+    "symbol_name": "generate_encoders_by_class_tuples",
+    "start_line": 115,
+    "end_line": 123,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/encoders.py::jsonable_encoder",
+    "filepath": "fastapi/encoders.py",
+    "chunk_type": "function",
+    "symbol_name": "jsonable_encoder",
+    "start_line": 129,
+    "end_line": 366,
+    "has_docstring": true
+  },
+  {
+    "chunk_id": "fastapi/exception_handlers.py::module_context",
+    "filepath": "fastapi/exception_handlers.py",
+    "chunk_type": "module_context",
+    "symbol_name": null,
+    "start_line": 1,
+    "end_line": 8,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/exception_handlers.py::http_exception_handler",
+    "filepath": "fastapi/exception_handlers.py",
+    "chunk_type": "function",
+    "symbol_name": "http_exception_handler",
+    "start_line": 11,
+    "end_line": 17,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/exception_handlers.py::request_validation_exception_handler",
+    "filepath": "fastapi/exception_handlers.py",
+    "chunk_type": "function",
+    "symbol_name": "request_validation_exception_handler",
+    "start_line": 20,
+    "end_line": 26,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/exception_handlers.py::websocket_request_validation_exception_handler",
+    "filepath": "fastapi/exception_handlers.py",
+    "chunk_type": "function",
+    "symbol_name": "websocket_request_validation_exception_handler",
+    "start_line": 29,
+    "end_line": 34,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/exceptions.py::module_context",
+    "filepath": "fastapi/exceptions.py",
+    "chunk_type": "module_context",
+    "symbol_name": null,
+    "start_line": 1,
+    "end_line": 7,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/exceptions.py::EndpointContext",
+    "filepath": "fastapi/exceptions.py",
+    "chunk_type": "class",
+    "symbol_name": "EndpointContext",
+    "start_line": 10,
+    "end_line": 14,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/exceptions.py::HTTPException",
+    "filepath": "fastapi/exceptions.py",
+    "chunk_type": "class",
+    "symbol_name": "HTTPException",
+    "start_line": 17,
+    "end_line": 83,
+    "has_docstring": true
+  },
+  {
+    "chunk_id": "fastapi/exceptions.py::WebSocketException",
+    "filepath": "fastapi/exceptions.py",
+    "chunk_type": "class",
+    "symbol_name": "WebSocketException",
+    "start_line": 86,
+    "end_line": 154,
+    "has_docstring": true
+  },
+  {
+    "chunk_id": "fastapi/exceptions.py::FastAPIError",
+    "filepath": "fastapi/exceptions.py",
+    "chunk_type": "class",
+    "symbol_name": "FastAPIError",
+    "start_line": 161,
+    "end_line": 164,
+    "has_docstring": true
+  },
+  {
+    "chunk_id": "fastapi/exceptions.py::DependencyScopeError",
+    "filepath": "fastapi/exceptions.py",
+    "chunk_type": "class",
+    "symbol_name": "DependencyScopeError",
+    "start_line": 167,
+    "end_line": 171,
+    "has_docstring": true
+  },
+  {
+    "chunk_id": "fastapi/exceptions.py::ValidationException",
+    "filepath": "fastapi/exceptions.py",
+    "chunk_type": "class",
+    "symbol_name": "ValidationException",
+    "start_line": 174,
+    "end_line": 209,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/exceptions.py::RequestValidationError",
+    "filepath": "fastapi/exceptions.py",
+    "chunk_type": "class",
+    "symbol_name": "RequestValidationError",
+    "start_line": 212,
+    "end_line": 221,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/exceptions.py::WebSocketRequestValidationError",
+    "filepath": "fastapi/exceptions.py",
+    "chunk_type": "class",
+    "symbol_name": "WebSocketRequestValidationError",
+    "start_line": 224,
+    "end_line": 231,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/exceptions.py::ResponseValidationError",
+    "filepath": "fastapi/exceptions.py",
+    "chunk_type": "class",
+    "symbol_name": "ResponseValidationError",
+    "start_line": 234,
+    "end_line": 243,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/exceptions.py::PydanticV1NotSupportedError",
+    "filepath": "fastapi/exceptions.py",
+    "chunk_type": "class",
+    "symbol_name": "PydanticV1NotSupportedError",
+    "start_line": 246,
+    "end_line": 249,
+    "has_docstring": true
+  },
+  {
+    "chunk_id": "fastapi/exceptions.py::FastAPIDeprecationWarning",
+    "filepath": "fastapi/exceptions.py",
+    "chunk_type": "class",
+    "symbol_name": "FastAPIDeprecationWarning",
+    "start_line": 252,
+    "end_line": 256,
+    "has_docstring": true
+  },
+  {
+    "chunk_id": "fastapi/logger.py::module_context",
+    "filepath": "fastapi/logger.py",
+    "chunk_type": "module_context",
+    "symbol_name": null,
+    "start_line": 1,
+    "end_line": 1,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/middleware/__init__.py::module_context",
+    "filepath": "fastapi/middleware/__init__.py",
+    "chunk_type": "module_context",
+    "symbol_name": null,
+    "start_line": 1,
+    "end_line": 1,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/middleware/asyncexitstack.py::module_context",
+    "filepath": "fastapi/middleware/asyncexitstack.py",
+    "chunk_type": "module_context",
+    "symbol_name": null,
+    "start_line": 1,
+    "end_line": 3,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/middleware/asyncexitstack.py::AsyncExitStackMiddleware",
+    "filepath": "fastapi/middleware/asyncexitstack.py",
+    "chunk_type": "class",
+    "symbol_name": "AsyncExitStackMiddleware",
+    "start_line": 8,
+    "end_line": 18,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/middleware/cors.py::module_context",
+    "filepath": "fastapi/middleware/cors.py",
+    "chunk_type": "module_context",
+    "symbol_name": null,
+    "start_line": 1,
+    "end_line": 1,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/middleware/gzip.py::module_context",
+    "filepath": "fastapi/middleware/gzip.py",
+    "chunk_type": "module_context",
+    "symbol_name": null,
+    "start_line": 1,
+    "end_line": 1,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/middleware/httpsredirect.py::module_context",
+    "filepath": "fastapi/middleware/httpsredirect.py",
+    "chunk_type": "module_context",
+    "symbol_name": null,
+    "start_line": 1,
+    "end_line": 1,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/middleware/trustedhost.py::module_context",
+    "filepath": "fastapi/middleware/trustedhost.py",
+    "chunk_type": "module_context",
+    "symbol_name": null,
+    "start_line": 1,
+    "end_line": 1,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/middleware/wsgi.py::module_context",
+    "filepath": "fastapi/middleware/wsgi.py",
+    "chunk_type": "module_context",
+    "symbol_name": null,
+    "start_line": 1,
+    "end_line": 1,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/openapi/__init__.py::file",
+    "filepath": "fastapi/openapi/__init__.py",
+    "chunk_type": "file",
+    "symbol_name": null,
+    "start_line": 1,
+    "end_line": 1,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/openapi/constants.py::file",
+    "filepath": "fastapi/openapi/constants.py",
+    "chunk_type": "file",
+    "symbol_name": null,
+    "start_line": 1,
+    "end_line": 3,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/openapi/docs.py::module_context",
+    "filepath": "fastapi/openapi/docs.py",
+    "chunk_type": "module_context",
+    "symbol_name": null,
+    "start_line": 1,
+    "end_line": 6,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/openapi/docs.py::_html_safe_json",
+    "filepath": "fastapi/openapi/docs.py",
+    "chunk_type": "function",
+    "symbol_name": "_html_safe_json",
+    "start_line": 9,
+    "end_line": 19,
+    "has_docstring": true
+  },
+  {
+    "chunk_id": "fastapi/openapi/docs.py::get_swagger_ui_html",
+    "filepath": "fastapi/openapi/docs.py",
+    "chunk_type": "function",
+    "symbol_name": "get_swagger_ui_html",
+    "start_line": 40,
+    "end_line": 194,
+    "has_docstring": true
+  },
+  {
+    "chunk_id": "fastapi/openapi/docs.py::get_redoc_html",
+    "filepath": "fastapi/openapi/docs.py",
+    "chunk_type": "function",
+    "symbol_name": "get_redoc_html",
+    "start_line": 197,
+    "end_line": 298,
+    "has_docstring": true
+  },
+  {
+    "chunk_id": "fastapi/openapi/docs.py::get_swagger_ui_oauth2_redirect_html",
+    "filepath": "fastapi/openapi/docs.py",
+    "chunk_type": "function",
+    "symbol_name": "get_swagger_ui_oauth2_redirect_html",
+    "start_line": 301,
+    "end_line": 389,
+    "has_docstring": true
+  },
+  {
+    "chunk_id": "fastapi/openapi/models.py::module_context",
+    "filepath": "fastapi/openapi/models.py",
+    "chunk_type": "module_context",
+    "symbol_name": null,
+    "start_line": 1,
+    "end_line": 20,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/openapi/models.py::EmailStr",
+    "filepath": "fastapi/openapi/models.py",
+    "chunk_type": "class",
+    "symbol_name": "EmailStr",
+    "start_line": 23,
+    "end_line": 54,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/openapi/models.py::BaseModelWithConfig",
+    "filepath": "fastapi/openapi/models.py",
+    "chunk_type": "class",
+    "symbol_name": "BaseModelWithConfig",
+    "start_line": 57,
+    "end_line": 58,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/openapi/models.py::Contact",
+    "filepath": "fastapi/openapi/models.py",
+    "chunk_type": "class",
+    "symbol_name": "Contact",
+    "start_line": 61,
+    "end_line": 64,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/openapi/models.py::License",
+    "filepath": "fastapi/openapi/models.py",
+    "chunk_type": "class",
+    "symbol_name": "License",
+    "start_line": 67,
+    "end_line": 70,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/openapi/models.py::Info",
+    "filepath": "fastapi/openapi/models.py",
+    "chunk_type": "class",
+    "symbol_name": "Info",
+    "start_line": 73,
+    "end_line": 80,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/openapi/models.py::ServerVariable",
+    "filepath": "fastapi/openapi/models.py",
+    "chunk_type": "class",
+    "symbol_name": "ServerVariable",
+    "start_line": 83,
+    "end_line": 86,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/openapi/models.py::Server",
+    "filepath": "fastapi/openapi/models.py",
+    "chunk_type": "class",
+    "symbol_name": "Server",
+    "start_line": 89,
+    "end_line": 92,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/openapi/models.py::Reference",
+    "filepath": "fastapi/openapi/models.py",
+    "chunk_type": "class",
+    "symbol_name": "Reference",
+    "start_line": 95,
+    "end_line": 96,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/openapi/models.py::Discriminator",
+    "filepath": "fastapi/openapi/models.py",
+    "chunk_type": "class",
+    "symbol_name": "Discriminator",
+    "start_line": 99,
+    "end_line": 101,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/openapi/models.py::XML",
+    "filepath": "fastapi/openapi/models.py",
+    "chunk_type": "class",
+    "symbol_name": "XML",
+    "start_line": 104,
+    "end_line": 109,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/openapi/models.py::ExternalDocumentation",
+    "filepath": "fastapi/openapi/models.py",
+    "chunk_type": "class",
+    "symbol_name": "ExternalDocumentation",
+    "start_line": 112,
+    "end_line": 114,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/openapi/models.py::Schema",
+    "filepath": "fastapi/openapi/models.py",
+    "chunk_type": "class",
+    "symbol_name": "Schema",
+    "start_line": 123,
+    "end_line": 204,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/openapi/models.py::Example",
+    "filepath": "fastapi/openapi/models.py",
+    "chunk_type": "class",
+    "symbol_name": "Example",
+    "start_line": 212,
+    "end_line": 218,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/openapi/models.py::ParameterInType",
+    "filepath": "fastapi/openapi/models.py",
+    "chunk_type": "class",
+    "symbol_name": "ParameterInType",
+    "start_line": 221,
+    "end_line": 225,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/openapi/models.py::Encoding",
+    "filepath": "fastapi/openapi/models.py",
+    "chunk_type": "class",
+    "symbol_name": "Encoding",
+    "start_line": 228,
+    "end_line": 233,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/openapi/models.py::MediaType",
+    "filepath": "fastapi/openapi/models.py",
+    "chunk_type": "class",
+    "symbol_name": "MediaType",
+    "start_line": 236,
+    "end_line": 240,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/openapi/models.py::ParameterBase",
+    "filepath": "fastapi/openapi/models.py",
+    "chunk_type": "class",
+    "symbol_name": "ParameterBase",
+    "start_line": 243,
+    "end_line": 255,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/openapi/models.py::Parameter",
+    "filepath": "fastapi/openapi/models.py",
+    "chunk_type": "class",
+    "symbol_name": "Parameter",
+    "start_line": 258,
+    "end_line": 260,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/openapi/models.py::Header",
+    "filepath": "fastapi/openapi/models.py",
+    "chunk_type": "class",
+    "symbol_name": "Header",
+    "start_line": 263,
+    "end_line": 264,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/openapi/models.py::RequestBody",
+    "filepath": "fastapi/openapi/models.py",
+    "chunk_type": "class",
+    "symbol_name": "RequestBody",
+    "start_line": 267,
+    "end_line": 270,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/openapi/models.py::Link",
+    "filepath": "fastapi/openapi/models.py",
+    "chunk_type": "class",
+    "symbol_name": "Link",
+    "start_line": 273,
+    "end_line": 279,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/openapi/models.py::Response",
+    "filepath": "fastapi/openapi/models.py",
+    "chunk_type": "class",
+    "symbol_name": "Response",
+    "start_line": 282,
+    "end_line": 286,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/openapi/models.py::Operation",
+    "filepath": "fastapi/openapi/models.py",
+    "chunk_type": "class",
+    "symbol_name": "Operation",
+    "start_line": 289,
+    "end_line": 302,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/openapi/models.py::PathItem",
+    "filepath": "fastapi/openapi/models.py",
+    "chunk_type": "class",
+    "symbol_name": "PathItem",
+    "start_line": 305,
+    "end_line": 318,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/openapi/models.py::SecuritySchemeType",
+    "filepath": "fastapi/openapi/models.py",
+    "chunk_type": "class",
+    "symbol_name": "SecuritySchemeType",
+    "start_line": 321,
+    "end_line": 325,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/openapi/models.py::SecurityBase",
+    "filepath": "fastapi/openapi/models.py",
+    "chunk_type": "class",
+    "symbol_name": "SecurityBase",
+    "start_line": 328,
+    "end_line": 330,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/openapi/models.py::APIKeyIn",
+    "filepath": "fastapi/openapi/models.py",
+    "chunk_type": "class",
+    "symbol_name": "APIKeyIn",
+    "start_line": 333,
+    "end_line": 336,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/openapi/models.py::APIKey",
+    "filepath": "fastapi/openapi/models.py",
+    "chunk_type": "class",
+    "symbol_name": "APIKey",
+    "start_line": 339,
+    "end_line": 342,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/openapi/models.py::HTTPBase",
+    "filepath": "fastapi/openapi/models.py",
+    "chunk_type": "class",
+    "symbol_name": "HTTPBase",
+    "start_line": 345,
+    "end_line": 347,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/openapi/models.py::HTTPBearer",
+    "filepath": "fastapi/openapi/models.py",
+    "chunk_type": "class",
+    "symbol_name": "HTTPBearer",
+    "start_line": 350,
+    "end_line": 352,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/openapi/models.py::OAuthFlow",
+    "filepath": "fastapi/openapi/models.py",
+    "chunk_type": "class",
+    "symbol_name": "OAuthFlow",
+    "start_line": 355,
+    "end_line": 357,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/openapi/models.py::OAuthFlowImplicit",
+    "filepath": "fastapi/openapi/models.py",
+    "chunk_type": "class",
+    "symbol_name": "OAuthFlowImplicit",
+    "start_line": 360,
+    "end_line": 361,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/openapi/models.py::OAuthFlowPassword",
+    "filepath": "fastapi/openapi/models.py",
+    "chunk_type": "class",
+    "symbol_name": "OAuthFlowPassword",
+    "start_line": 364,
+    "end_line": 365,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/openapi/models.py::OAuthFlowClientCredentials",
+    "filepath": "fastapi/openapi/models.py",
+    "chunk_type": "class",
+    "symbol_name": "OAuthFlowClientCredentials",
+    "start_line": 368,
+    "end_line": 369,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/openapi/models.py::OAuthFlowAuthorizationCode",
+    "filepath": "fastapi/openapi/models.py",
+    "chunk_type": "class",
+    "symbol_name": "OAuthFlowAuthorizationCode",
+    "start_line": 372,
+    "end_line": 374,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/openapi/models.py::OAuthFlows",
+    "filepath": "fastapi/openapi/models.py",
+    "chunk_type": "class",
+    "symbol_name": "OAuthFlows",
+    "start_line": 377,
+    "end_line": 381,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/openapi/models.py::OAuth2",
+    "filepath": "fastapi/openapi/models.py",
+    "chunk_type": "class",
+    "symbol_name": "OAuth2",
+    "start_line": 384,
+    "end_line": 386,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/openapi/models.py::OpenIdConnect",
+    "filepath": "fastapi/openapi/models.py",
+    "chunk_type": "class",
+    "symbol_name": "OpenIdConnect",
+    "start_line": 389,
+    "end_line": 393,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/openapi/models.py::Components",
+    "filepath": "fastapi/openapi/models.py",
+    "chunk_type": "class",
+    "symbol_name": "Components",
+    "start_line": 399,
+    "end_line": 410,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/openapi/models.py::Tag",
+    "filepath": "fastapi/openapi/models.py",
+    "chunk_type": "class",
+    "symbol_name": "Tag",
+    "start_line": 413,
+    "end_line": 416,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/openapi/models.py::OpenAPI",
+    "filepath": "fastapi/openapi/models.py",
+    "chunk_type": "class",
+    "symbol_name": "OpenAPI",
+    "start_line": 419,
+    "end_line": 430,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/openapi/utils.py::module_context",
+    "filepath": "fastapi/openapi/utils.py",
+    "chunk_type": "module_context",
+    "symbol_name": null,
+    "start_line": 1,
+    "end_line": 47,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/openapi/utils.py::_OpenAPIDependencyData",
+    "filepath": "fastapi/openapi/utils.py",
+    "chunk_type": "class",
+    "symbol_name": "_OpenAPIDependencyData",
+    "start_line": 89,
+    "end_line": 96,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/openapi/utils.py::_get_openapi_dependency_data",
+    "filepath": "fastapi/openapi/utils.py",
+    "chunk_type": "function",
+    "symbol_name": "_get_openapi_dependency_data",
+    "start_line": 99,
+    "end_line": 129,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/openapi/utils.py::_get_openapi_security_definitions",
+    "filepath": "fastapi/openapi/utils.py",
+    "chunk_type": "function",
+    "symbol_name": "_get_openapi_security_definitions",
+    "start_line": 132,
+    "end_line": 156,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/openapi/utils.py::_get_openapi_operation_parameters",
+    "filepath": "fastapi/openapi/utils.py",
+    "chunk_type": "function",
+    "symbol_name": "_get_openapi_operation_parameters",
+    "start_line": 159,
+    "end_line": 228,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/openapi/utils.py::get_openapi_operation_request_body",
+    "filepath": "fastapi/openapi/utils.py",
+    "chunk_type": "function",
+    "symbol_name": "get_openapi_operation_request_body",
+    "start_line": 231,
+    "end_line": 263,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/openapi/utils.py::generate_operation_id",
+    "filepath": "fastapi/openapi/utils.py",
+    "chunk_type": "function",
+    "symbol_name": "generate_operation_id",
+    "start_line": 266,
+    "end_line": 278,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/openapi/utils.py::generate_operation_summary",
+    "filepath": "fastapi/openapi/utils.py",
+    "chunk_type": "function",
+    "symbol_name": "generate_operation_summary",
+    "start_line": 281,
+    "end_line": 284,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/openapi/utils.py::get_openapi_operation_metadata",
+    "filepath": "fastapi/openapi/utils.py",
+    "chunk_type": "function",
+    "symbol_name": "get_openapi_operation_metadata",
+    "start_line": 287,
+    "end_line": 308,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/openapi/utils.py::get_openapi_path",
+    "filepath": "fastapi/openapi/utils.py",
+    "chunk_type": "function",
+    "symbol_name": "get_openapi_path",
+    "start_line": 311,
+    "end_line": 540,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/openapi/utils.py::_get_api_route_for_openapi",
+    "filepath": "fastapi/openapi/utils.py",
+    "chunk_type": "function",
+    "symbol_name": "_get_api_route_for_openapi",
+    "start_line": 543,
+    "end_line": 548,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/openapi/utils.py::get_fields_from_routes",
+    "filepath": "fastapi/openapi/utils.py",
+    "chunk_type": "function",
+    "symbol_name": "get_fields_from_routes",
+    "start_line": 551,
+    "end_line": 582,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/openapi/utils.py::get_openapi",
+    "filepath": "fastapi/openapi/utils.py",
+    "chunk_type": "function",
+    "symbol_name": "get_openapi",
+    "start_line": 585,
+    "end_line": 679,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/param_functions.py::module_context",
+    "filepath": "fastapi/param_functions.py",
+    "chunk_type": "module_context",
+    "symbol_name": null,
+    "start_line": 1,
+    "end_line": 10,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/param_functions.py::Path",
+    "filepath": "fastapi/param_functions.py",
+    "chunk_type": "function",
+    "symbol_name": "Path",
+    "start_line": 13,
+    "end_line": 354,
+    "has_docstring": true
+  },
+  {
+    "chunk_id": "fastapi/param_functions.py::Query",
+    "filepath": "fastapi/param_functions.py",
+    "chunk_type": "function",
+    "symbol_name": "Query",
+    "start_line": 357,
+    "end_line": 698,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/param_functions.py::Header",
+    "filepath": "fastapi/param_functions.py",
+    "chunk_type": "function",
+    "symbol_name": "Header",
+    "start_line": 701,
+    "end_line": 1015,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/param_functions.py::Cookie",
+    "filepath": "fastapi/param_functions.py",
+    "chunk_type": "function",
+    "symbol_name": "Cookie",
+    "start_line": 1018,
+    "end_line": 1320,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/param_functions.py::Body",
+    "filepath": "fastapi/param_functions.py",
+    "chunk_type": "function",
+    "symbol_name": "Body",
+    "start_line": 1323,
+    "end_line": 1650,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/param_functions.py::Form",
+    "filepath": "fastapi/param_functions.py",
+    "chunk_type": "function",
+    "symbol_name": "Form",
+    "start_line": 1653,
+    "end_line": 1965,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/param_functions.py::File",
+    "filepath": "fastapi/param_functions.py",
+    "chunk_type": "function",
+    "symbol_name": "File",
+    "start_line": 1968,
+    "end_line": 2280,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/param_functions.py::Depends",
+    "filepath": "fastapi/param_functions.py",
+    "chunk_type": "function",
+    "symbol_name": "Depends",
+    "start_line": 2283,
+    "end_line": 2369,
+    "has_docstring": true
+  },
+  {
+    "chunk_id": "fastapi/param_functions.py::Security",
+    "filepath": "fastapi/param_functions.py",
+    "chunk_type": "function",
+    "symbol_name": "Security",
+    "start_line": 2372,
+    "end_line": 2460,
+    "has_docstring": true
+  },
+  {
+    "chunk_id": "fastapi/params.py::module_context",
+    "filepath": "fastapi/params.py",
+    "chunk_type": "module_context",
+    "symbol_name": null,
+    "start_line": 1,
+    "end_line": 16,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/params.py::ParamTypes",
+    "filepath": "fastapi/params.py",
+    "chunk_type": "class",
+    "symbol_name": "ParamTypes",
+    "start_line": 19,
+    "end_line": 23,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/params.py::Param",
+    "filepath": "fastapi/params.py",
+    "chunk_type": "class",
+    "symbol_name": "Param",
+    "start_line": 26,
+    "end_line": 134,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/params.py::Path",
+    "filepath": "fastapi/params.py",
+    "chunk_type": "class",
+    "symbol_name": "Path",
+    "start_line": 137,
+    "end_line": 218,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/params.py::Query",
+    "filepath": "fastapi/params.py",
+    "chunk_type": "class",
+    "symbol_name": "Query",
+    "start_line": 221,
+    "end_line": 300,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/params.py::Header",
+    "filepath": "fastapi/params.py",
+    "chunk_type": "class",
+    "symbol_name": "Header",
+    "start_line": 303,
+    "end_line": 384,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/params.py::Cookie",
+    "filepath": "fastapi/params.py",
+    "chunk_type": "class",
+    "symbol_name": "Cookie",
+    "start_line": 387,
+    "end_line": 466,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/params.py::Body",
+    "filepath": "fastapi/params.py",
+    "chunk_type": "class",
+    "symbol_name": "Body",
+    "start_line": 469,
+    "end_line": 578,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/params.py::Form",
+    "filepath": "fastapi/params.py",
+    "chunk_type": "class",
+    "symbol_name": "Form",
+    "start_line": 581,
+    "end_line": 660,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/params.py::File",
+    "filepath": "fastapi/params.py",
+    "chunk_type": "class",
+    "symbol_name": "File",
+    "start_line": 663,
+    "end_line": 742,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/params.py::Depends",
+    "filepath": "fastapi/params.py",
+    "chunk_type": "class",
+    "symbol_name": "Depends",
+    "start_line": 746,
+    "end_line": 749,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/params.py::Security",
+    "filepath": "fastapi/params.py",
+    "chunk_type": "class",
+    "symbol_name": "Security",
+    "start_line": 753,
+    "end_line": 754,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/requests.py::module_context",
+    "filepath": "fastapi/requests.py",
+    "chunk_type": "module_context",
+    "symbol_name": null,
+    "start_line": 1,
+    "end_line": 2,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/responses.py::module_context",
+    "filepath": "fastapi/responses.py",
+    "chunk_type": "module_context",
+    "symbol_name": null,
+    "start_line": 1,
+    "end_line": 13,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/responses.py::_UjsonModule",
+    "filepath": "fastapi/responses.py",
+    "chunk_type": "class",
+    "symbol_name": "_UjsonModule",
+    "start_line": 16,
+    "end_line": 17,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/responses.py::_OrjsonModule",
+    "filepath": "fastapi/responses.py",
+    "chunk_type": "class",
+    "symbol_name": "_OrjsonModule",
+    "start_line": 20,
+    "end_line": 24,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/responses.py::UJSONResponse",
+    "filepath": "fastapi/responses.py",
+    "chunk_type": "class",
+    "symbol_name": "UJSONResponse",
+    "start_line": 48,
+    "end_line": 66,
+    "has_docstring": true
+  },
+  {
+    "chunk_id": "fastapi/responses.py::ORJSONResponse",
+    "filepath": "fastapi/responses.py",
+    "chunk_type": "class",
+    "symbol_name": "ORJSONResponse",
+    "start_line": 78,
+    "end_line": 98,
+    "has_docstring": true
+  },
+  {
+    "chunk_id": "fastapi/routing.py::module_context",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "module_context",
+    "symbol_name": null,
+    "start_line": 1,
+    "end_line": 116,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/routing.py::request_response",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "function",
+    "symbol_name": "request_response",
+    "start_line": 121,
+    "end_line": 160,
+    "has_docstring": true
+  },
+  {
+    "chunk_id": "fastapi/routing.py::websocket_session",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "function",
+    "symbol_name": "websocket_session",
+    "start_line": 165,
+    "end_line": 186,
+    "has_docstring": true
+  },
+  {
+    "chunk_id": "fastapi/routing.py::_AsyncLiftContextManager",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "class",
+    "symbol_name": "_AsyncLiftContextManager",
+    "start_line": 193,
+    "end_line": 212,
+    "has_docstring": true
+  },
+  {
+    "chunk_id": "fastapi/routing.py::_wrap_gen_lifespan_context",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "function",
+    "symbol_name": "_wrap_gen_lifespan_context",
+    "start_line": 216,
+    "end_line": 230,
+    "has_docstring": true
+  },
+  {
+    "chunk_id": "fastapi/routing.py::_merge_lifespan_context",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "function",
+    "symbol_name": "_merge_lifespan_context",
+    "start_line": 233,
+    "end_line": 247,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/routing.py::_DefaultLifespan",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "class",
+    "symbol_name": "_DefaultLifespan",
+    "start_line": 250,
+    "end_line": 271,
+    "has_docstring": true
+  },
+  {
+    "chunk_id": "fastapi/routing.py::_extract_endpoint_context",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "function",
+    "symbol_name": "_extract_endpoint_context",
+    "start_line": 278,
+    "end_line": 298,
+    "has_docstring": true
+  },
+  {
+    "chunk_id": "fastapi/routing.py::serialize_response",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "function",
+    "symbol_name": "serialize_response",
+    "start_line": 301,
+    "end_line": 341,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/routing.py::run_endpoint_function",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "function",
+    "symbol_name": "run_endpoint_function",
+    "start_line": 344,
+    "end_line": 354,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/routing.py::_build_response_args",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "function",
+    "symbol_name": "_build_response_args",
+    "start_line": 357,
+    "end_line": 372,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/routing.py::get_request_handler",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "function",
+    "symbol_name": "get_request_handler",
+    "start_line": 375,
+    "end_line": 761,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/routing.py::get_websocket_app",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "function",
+    "symbol_name": "get_websocket_app",
+    "start_line": 764,
+    "end_line": 798,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/routing.py::APIWebSocketRoute",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "class",
+    "symbol_name": "APIWebSocketRoute",
+    "start_line": 801,
+    "end_line": 837,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/routing.py::_frontend_dependency_endpoint",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "function",
+    "symbol_name": "_frontend_dependency_endpoint",
+    "start_line": 851,
+    "end_line": 852,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/routing.py::_build_dependant_with_parameterless_dependencies",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "function",
+    "symbol_name": "_build_dependant_with_parameterless_dependencies",
+    "start_line": 855,
+    "end_line": 869,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/routing.py::_RouteWithPath",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "class",
+    "symbol_name": "_RouteWithPath",
+    "start_line": 872,
+    "end_line": 873,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/routing.py::_get_fastapi_scope",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "function",
+    "symbol_name": "_get_fastapi_scope",
+    "start_line": 876,
+    "end_line": 879,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/routing.py::_update_scope",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "function",
+    "symbol_name": "_update_scope",
+    "start_line": 882,
+    "end_line": 888,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/routing.py::_get_scope_effective_route_context",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "function",
+    "symbol_name": "_get_scope_effective_route_context",
+    "start_line": 891,
+    "end_line": 892,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/routing.py::_get_scope_included_router",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "function",
+    "symbol_name": "_get_scope_included_router",
+    "start_line": 895,
+    "end_line": 896,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/routing.py::_frontend_scope_specificity",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "function",
+    "symbol_name": "_frontend_scope_specificity",
+    "start_line": 899,
+    "end_line": 905,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/routing.py::_restore_fastapi_scope_key",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "function",
+    "symbol_name": "_restore_fastapi_scope_key",
+    "start_line": 908,
+    "end_line": 915,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/routing.py::_APIRouteLike",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "class",
+    "symbol_name": "_APIRouteLike",
+    "start_line": 918,
+    "end_line": 958,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/routing.py::_populate_api_route_state",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "function",
+    "symbol_name": "_populate_api_route_state",
+    "start_line": 961,
+    "end_line": 1123,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/routing.py::APIRoute__header",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "class_header",
+    "symbol_name": "APIRoute",
+    "start_line": 1126,
+    "end_line": 1160,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/routing.py::APIRoute.__init__",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "method",
+    "symbol_name": "__init__",
+    "start_line": 1161,
+    "end_line": 1223,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/routing.py::APIRoute.get_route_handler",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "method",
+    "symbol_name": "get_route_handler",
+    "start_line": 1225,
+    "end_line": 1249,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/routing.py::APIRoute.matches",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "method",
+    "symbol_name": "matches",
+    "start_line": 1251,
+    "end_line": 1259,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/routing.py::APIRoute.handle",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "method",
+    "symbol_name": "handle",
+    "start_line": 1261,
+    "end_line": 1281,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/routing.py::_RouterIncludeContext",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "class",
+    "symbol_name": "_RouterIncludeContext",
+    "start_line": 1285,
+    "end_line": 1370,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/routing.py::_EffectiveRouteContext__header",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "class_header",
+    "symbol_name": "_EffectiveRouteContext",
+    "start_line": 1374,
+    "end_line": 1425,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/routing.py::_EffectiveRouteContext.from_api_route",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "method",
+    "symbol_name": "from_api_route",
+    "start_line": 1426,
+    "end_line": 1478,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/routing.py::_EffectiveRouteContext.from_frontend_route_group",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "method",
+    "symbol_name": "from_frontend_route_group",
+    "start_line": 1481,
+    "end_line": 1503,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/routing.py::_EffectiveRouteContext.matches",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "method",
+    "symbol_name": "matches",
+    "start_line": 1505,
+    "end_line": 1526,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/routing.py::_EffectiveRouteContext.url_path_for",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "method",
+    "symbol_name": "url_path_for",
+    "start_line": 1528,
+    "end_line": 1541,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/routing.py::RouteContext",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "class",
+    "symbol_name": "RouteContext",
+    "start_line": 1545,
+    "end_line": 1582,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/routing.py::_IncludedRouter__header",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "class_header",
+    "symbol_name": "_IncludedRouter",
+    "start_line": 1586,
+    "end_line": 1600,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/routing.py::_IncludedRouter.effective_candidates",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "method",
+    "symbol_name": "effective_candidates",
+    "start_line": 1601,
+    "end_line": 1624,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/routing.py::_IncludedRouter.effective_low_priority_routes",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "method",
+    "symbol_name": "effective_low_priority_routes",
+    "start_line": 1626,
+    "end_line": 1651,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/routing.py::_IncludedRouter._build_effective_context",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "method",
+    "symbol_name": "_build_effective_context",
+    "start_line": 1653,
+    "end_line": 1726,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/routing.py::_IncludedRouter._match",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "method",
+    "symbol_name": "_match",
+    "start_line": 1728,
+    "end_line": 1762,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/routing.py::_IncludedRouter.matches",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "method",
+    "symbol_name": "matches",
+    "start_line": 1764,
+    "end_line": 1776,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/routing.py::_IncludedRouter.handle",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "method",
+    "symbol_name": "handle",
+    "start_line": 1778,
+    "end_line": 1780,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/routing.py::_IncludedRouter._handle_selected",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "method",
+    "symbol_name": "_handle_selected",
+    "start_line": 1782,
+    "end_line": 1802,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/routing.py::_IncludedRouter.effective_route_contexts",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "method",
+    "symbol_name": "effective_route_contexts",
+    "start_line": 1804,
+    "end_line": 1809,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/routing.py::_IncludedRouter.url_path_for",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "method",
+    "symbol_name": "url_path_for",
+    "start_line": 1811,
+    "end_line": 1817,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/routing.py::_iter_included_route_candidates",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "function",
+    "symbol_name": "_iter_included_route_candidates",
+    "start_line": 1820,
+    "end_line": 1825,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/routing.py::iter_route_contexts",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "function",
+    "symbol_name": "iter_route_contexts",
+    "start_line": 1828,
+    "end_line": 1839,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/routing.py::_iter_routes_with_context",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "function",
+    "symbol_name": "_iter_routes_with_context",
+    "start_line": 1842,
+    "end_line": 1850,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/routing.py::_normalize_frontend_path",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "function",
+    "symbol_name": "_normalize_frontend_path",
+    "start_line": 1853,
+    "end_line": 1860,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/routing.py::_join_frontend_paths",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "function",
+    "symbol_name": "_join_frontend_paths",
+    "start_line": 1863,
+    "end_line": 1868,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/routing.py::_frontend_path_specificity",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "function",
+    "symbol_name": "_frontend_path_specificity",
+    "start_line": 1871,
+    "end_line": 1874,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/routing.py::_get_resolved_absolute_path",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "function",
+    "symbol_name": "_get_resolved_absolute_path",
+    "start_line": 1877,
+    "end_line": 1878,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/routing.py::_resolve_frontend_check_dir",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "function",
+    "symbol_name": "_resolve_frontend_check_dir",
+    "start_line": 1881,
+    "end_line": 1896,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/routing.py::_FrontendStaticFiles",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "class",
+    "symbol_name": "_FrontendStaticFiles",
+    "start_line": 1899,
+    "end_line": 2017,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/routing.py::_iter_accept_media_types",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "function",
+    "symbol_name": "_iter_accept_media_types",
+    "start_line": 2020,
+    "end_line": 2034,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/routing.py::_is_frontend_navigation_request",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "function",
+    "symbol_name": "_is_frontend_navigation_request",
+    "start_line": 2037,
+    "end_line": 2044,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/routing.py::_FrontendRoute",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "class",
+    "symbol_name": "_FrontendRoute",
+    "start_line": 2047,
+    "end_line": 2100,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/routing.py::_FrontendRouteGroup",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "class",
+    "symbol_name": "_FrontendRouteGroup",
+    "start_line": 2103,
+    "end_line": 2252,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/routing.py::APIRouter__header",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "class_header",
+    "symbol_name": "APIRouter",
+    "start_line": 2255,
+    "end_line": 2281,
+    "has_docstring": true
+  },
+  {
+    "chunk_id": "fastapi/routing.py::APIRouter.__init__",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "method",
+    "symbol_name": "__init__",
+    "start_line": 2282,
+    "end_line": 2568,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/routing.py::APIRouter._mark_routes_changed",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "method",
+    "symbol_name": "_mark_routes_changed",
+    "start_line": 2570,
+    "end_line": 2571,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/routing.py::APIRouter._get_routes_version",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "method",
+    "symbol_name": "_get_routes_version",
+    "start_line": 2573,
+    "end_line": 2584,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/routing.py::APIRouter._contains_router",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "method",
+    "symbol_name": "_contains_router",
+    "start_line": 2586,
+    "end_line": 2602,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/routing.py::APIRouter.add_route",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "method",
+    "symbol_name": "add_route",
+    "start_line": 2604,
+    "end_line": 2619,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/routing.py::APIRouter.add_websocket_route",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "method",
+    "symbol_name": "add_websocket_route",
+    "start_line": 2621,
+    "end_line": 2628,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/routing.py::APIRouter.frontend",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "method",
+    "symbol_name": "frontend",
+    "start_line": 2630,
+    "end_line": 2717,
+    "has_docstring": true
+  },
+  {
+    "chunk_id": "fastapi/routing.py::APIRouter.app",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "method",
+    "symbol_name": "app",
+    "start_line": 2719,
+    "end_line": 2781,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/routing.py::APIRouter.handle",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "method",
+    "symbol_name": "handle",
+    "start_line": 2783,
+    "end_line": 2791,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/routing.py::APIRouter.matches",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "method",
+    "symbol_name": "matches",
+    "start_line": 2793,
+    "end_line": 2801,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/routing.py::APIRouter._iter_low_priority_routes",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "method",
+    "symbol_name": "_iter_low_priority_routes",
+    "start_line": 2803,
+    "end_line": 2809,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/routing.py::APIRouter._match_low_priority",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "method",
+    "symbol_name": "_match_low_priority",
+    "start_line": 2811,
+    "end_line": 2859,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/routing.py::APIRouter._frontend_match_is_more_specific",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "method",
+    "symbol_name": "_frontend_match_is_more_specific",
+    "start_line": 2861,
+    "end_line": 2868,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/routing.py::APIRouter.route",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "method",
+    "symbol_name": "route",
+    "start_line": 2870,
+    "end_line": 2887,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/routing.py::APIRouter.add_api_route",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "method",
+    "symbol_name": "add_api_route",
+    "start_line": 2889,
+    "end_line": 2971,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/routing.py::APIRouter.api_route",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "method",
+    "symbol_name": "api_route",
+    "start_line": 2973,
+    "end_line": 3033,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/routing.py::APIRouter.add_api_websocket_route",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "method",
+    "symbol_name": "add_api_websocket_route",
+    "start_line": 3035,
+    "end_line": 3055,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/routing.py::APIRouter.websocket",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "method",
+    "symbol_name": "websocket",
+    "start_line": 3057,
+    "end_line": 3122,
+    "has_docstring": true
+  },
+  {
+    "chunk_id": "fastapi/routing.py::APIRouter.websocket_route",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "method",
+    "symbol_name": "websocket_route",
+    "start_line": 3124,
+    "end_line": 3131,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/routing.py::APIRouter.include_router",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "method",
+    "symbol_name": "include_router",
+    "start_line": 3133,
+    "end_line": 3320,
+    "has_docstring": true
+  },
+  {
+    "chunk_id": "fastapi/routing.py::APIRouter.get",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "method",
+    "symbol_name": "get",
+    "start_line": 3322,
+    "end_line": 3697,
+    "has_docstring": true
+  },
+  {
+    "chunk_id": "fastapi/routing.py::APIRouter.put",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "method",
+    "symbol_name": "put",
+    "start_line": 3699,
+    "end_line": 4079,
+    "has_docstring": true
+  },
+  {
+    "chunk_id": "fastapi/routing.py::APIRouter.post",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "method",
+    "symbol_name": "post",
+    "start_line": 4081,
+    "end_line": 4461,
+    "has_docstring": true
+  },
+  {
+    "chunk_id": "fastapi/routing.py::APIRouter.delete",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "method",
+    "symbol_name": "delete",
+    "start_line": 4463,
+    "end_line": 4838,
+    "has_docstring": true
+  },
+  {
+    "chunk_id": "fastapi/routing.py::APIRouter.options",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "method",
+    "symbol_name": "options",
+    "start_line": 4840,
+    "end_line": 5215,
+    "has_docstring": true
+  },
+  {
+    "chunk_id": "fastapi/routing.py::APIRouter.head",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "method",
+    "symbol_name": "head",
+    "start_line": 5217,
+    "end_line": 5597,
+    "has_docstring": true
+  },
+  {
+    "chunk_id": "fastapi/routing.py::APIRouter.patch",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "method",
+    "symbol_name": "patch",
+    "start_line": 5599,
+    "end_line": 5979,
+    "has_docstring": true
+  },
+  {
+    "chunk_id": "fastapi/routing.py::APIRouter.trace",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "method",
+    "symbol_name": "trace",
+    "start_line": 5981,
+    "end_line": 6361,
+    "has_docstring": true
+  },
+  {
+    "chunk_id": "fastapi/routing.py::APIRouter._startup",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "method",
+    "symbol_name": "_startup",
+    "start_line": 6364,
+    "end_line": 6377,
+    "has_docstring": true
+  },
+  {
+    "chunk_id": "fastapi/routing.py::APIRouter._shutdown",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "method",
+    "symbol_name": "_shutdown",
+    "start_line": 6380,
+    "end_line": 6393,
+    "has_docstring": true
+  },
+  {
+    "chunk_id": "fastapi/routing.py::APIRouter.add_event_handler",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "method",
+    "symbol_name": "add_event_handler",
+    "start_line": 6396,
+    "end_line": 6413,
+    "has_docstring": true
+  },
+  {
+    "chunk_id": "fastapi/routing.py::APIRouter.on_event",
+    "filepath": "fastapi/routing.py",
+    "chunk_type": "method",
+    "symbol_name": "on_event",
+    "start_line": 6423,
+    "end_line": 6447,
+    "has_docstring": true
+  },
+  {
+    "chunk_id": "fastapi/security/__init__.py::module_context",
+    "filepath": "fastapi/security/__init__.py",
+    "chunk_type": "module_context",
+    "symbol_name": null,
+    "start_line": 1,
+    "end_line": 15,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/security/api_key.py::module_context",
+    "filepath": "fastapi/security/api_key.py",
+    "chunk_type": "module_context",
+    "symbol_name": null,
+    "start_line": 1,
+    "end_line": 8,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/security/api_key.py::APIKeyBase",
+    "filepath": "fastapi/security/api_key.py",
+    "chunk_type": "class",
+    "symbol_name": "APIKeyBase",
+    "start_line": 11,
+    "end_line": 52,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/security/api_key.py::APIKeyQuery",
+    "filepath": "fastapi/security/api_key.py",
+    "chunk_type": "class",
+    "symbol_name": "APIKeyQuery",
+    "start_line": 55,
+    "end_line": 144,
+    "has_docstring": true
+  },
+  {
+    "chunk_id": "fastapi/security/api_key.py::APIKeyHeader",
+    "filepath": "fastapi/security/api_key.py",
+    "chunk_type": "class",
+    "symbol_name": "APIKeyHeader",
+    "start_line": 147,
+    "end_line": 232,
+    "has_docstring": true
+  },
+  {
+    "chunk_id": "fastapi/security/api_key.py::APIKeyCookie",
+    "filepath": "fastapi/security/api_key.py",
+    "chunk_type": "class",
+    "symbol_name": "APIKeyCookie",
+    "start_line": 235,
+    "end_line": 320,
+    "has_docstring": true
+  },
+  {
+    "chunk_id": "fastapi/security/base.py::module_context",
+    "filepath": "fastapi/security/base.py",
+    "chunk_type": "module_context",
+    "symbol_name": null,
+    "start_line": 1,
+    "end_line": 1,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/security/base.py::SecurityBase",
+    "filepath": "fastapi/security/base.py",
+    "chunk_type": "class",
+    "symbol_name": "SecurityBase",
+    "start_line": 4,
+    "end_line": 6,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/security/http.py::module_context",
+    "filepath": "fastapi/security/http.py",
+    "chunk_type": "module_context",
+    "symbol_name": null,
+    "start_line": 1,
+    "end_line": 13,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/security/http.py::HTTPBasicCredentials",
+    "filepath": "fastapi/security/http.py",
+    "chunk_type": "class",
+    "symbol_name": "HTTPBasicCredentials",
+    "start_line": 16,
+    "end_line": 26,
+    "has_docstring": true
+  },
+  {
+    "chunk_id": "fastapi/security/http.py::HTTPAuthorizationCredentials",
+    "filepath": "fastapi/security/http.py",
+    "chunk_type": "class",
+    "symbol_name": "HTTPAuthorizationCredentials",
+    "start_line": 29,
+    "end_line": 66,
+    "has_docstring": true
+  },
+  {
+    "chunk_id": "fastapi/security/http.py::HTTPBase",
+    "filepath": "fastapi/security/http.py",
+    "chunk_type": "class",
+    "symbol_name": "HTTPBase",
+    "start_line": 69,
+    "end_line": 102,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/security/http.py::HTTPBasic",
+    "filepath": "fastapi/security/http.py",
+    "chunk_type": "class",
+    "symbol_name": "HTTPBasic",
+    "start_line": 105,
+    "end_line": 219,
+    "has_docstring": true
+  },
+  {
+    "chunk_id": "fastapi/security/http.py::HTTPBearer",
+    "filepath": "fastapi/security/http.py",
+    "chunk_type": "class",
+    "symbol_name": "HTTPBearer",
+    "start_line": 222,
+    "end_line": 316,
+    "has_docstring": true
+  },
+  {
+    "chunk_id": "fastapi/security/http.py::HTTPDigest",
+    "filepath": "fastapi/security/http.py",
+    "chunk_type": "class",
+    "symbol_name": "HTTPDigest",
+    "start_line": 319,
+    "end_line": 417,
+    "has_docstring": true
+  },
+  {
+    "chunk_id": "fastapi/security/oauth2.py::module_context",
+    "filepath": "fastapi/security/oauth2.py",
+    "chunk_type": "module_context",
+    "symbol_name": null,
+    "start_line": 1,
+    "end_line": 11,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/security/oauth2.py::OAuth2PasswordRequestForm",
+    "filepath": "fastapi/security/oauth2.py",
+    "chunk_type": "class",
+    "symbol_name": "OAuth2PasswordRequestForm",
+    "start_line": 14,
+    "end_line": 159,
+    "has_docstring": true
+  },
+  {
+    "chunk_id": "fastapi/security/oauth2.py::OAuth2PasswordRequestFormStrict__header",
+    "filepath": "fastapi/security/oauth2.py",
+    "chunk_type": "class_header",
+    "symbol_name": "OAuth2PasswordRequestFormStrict",
+    "start_line": 162,
+    "end_line": 225,
+    "has_docstring": true
+  },
+  {
+    "chunk_id": "fastapi/security/oauth2.py::OAuth2PasswordRequestFormStrict.__init__",
+    "filepath": "fastapi/security/oauth2.py",
+    "chunk_type": "method",
+    "symbol_name": "__init__",
+    "start_line": 226,
+    "end_line": 327,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/security/oauth2.py::OAuth2",
+    "filepath": "fastapi/security/oauth2.py",
+    "chunk_type": "class",
+    "symbol_name": "OAuth2",
+    "start_line": 330,
+    "end_line": 430,
+    "has_docstring": true
+  },
+  {
+    "chunk_id": "fastapi/security/oauth2.py::OAuth2PasswordBearer",
+    "filepath": "fastapi/security/oauth2.py",
+    "chunk_type": "class",
+    "symbol_name": "OAuth2PasswordBearer",
+    "start_line": 433,
+    "end_line": 544,
+    "has_docstring": true
+  },
+  {
+    "chunk_id": "fastapi/security/oauth2.py::OAuth2AuthorizationCodeBearer",
+    "filepath": "fastapi/security/oauth2.py",
+    "chunk_type": "class",
+    "symbol_name": "OAuth2AuthorizationCodeBearer",
+    "start_line": 547,
+    "end_line": 650,
+    "has_docstring": true
+  },
+  {
+    "chunk_id": "fastapi/security/oauth2.py::SecurityScopes",
+    "filepath": "fastapi/security/oauth2.py",
+    "chunk_type": "class",
+    "symbol_name": "SecurityScopes",
+    "start_line": 653,
+    "end_line": 693,
+    "has_docstring": true
+  },
+  {
+    "chunk_id": "fastapi/security/open_id_connect_url.py::module_context",
+    "filepath": "fastapi/security/open_id_connect_url.py",
+    "chunk_type": "module_context",
+    "symbol_name": null,
+    "start_line": 1,
+    "end_line": 8,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/security/open_id_connect_url.py::OpenIdConnect",
+    "filepath": "fastapi/security/open_id_connect_url.py",
+    "chunk_type": "class",
+    "symbol_name": "OpenIdConnect",
+    "start_line": 11,
+    "end_line": 94,
+    "has_docstring": true
+  },
+  {
+    "chunk_id": "fastapi/security/utils.py::get_authorization_scheme_param",
+    "filepath": "fastapi/security/utils.py",
+    "chunk_type": "function",
+    "symbol_name": "get_authorization_scheme_param",
+    "start_line": 1,
+    "end_line": 7,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/sse.py::module_context",
+    "filepath": "fastapi/sse.py",
+    "chunk_type": "module_context",
+    "symbol_name": null,
+    "start_line": 1,
+    "end_line": 5,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/sse.py::EventSourceResponse",
+    "filepath": "fastapi/sse.py",
+    "chunk_type": "class",
+    "symbol_name": "EventSourceResponse",
+    "start_line": 20,
+    "end_line": 33,
+    "has_docstring": true
+  },
+  {
+    "chunk_id": "fastapi/sse.py::_check_single_line",
+    "filepath": "fastapi/sse.py",
+    "chunk_type": "function",
+    "symbol_name": "_check_single_line",
+    "start_line": 36,
+    "end_line": 39,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/sse.py::_check_event_single_line",
+    "filepath": "fastapi/sse.py",
+    "chunk_type": "function",
+    "symbol_name": "_check_event_single_line",
+    "start_line": 42,
+    "end_line": 43,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/sse.py::_check_id_valid",
+    "filepath": "fastapi/sse.py",
+    "chunk_type": "function",
+    "symbol_name": "_check_id_valid",
+    "start_line": 46,
+    "end_line": 49,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/sse.py::ServerSentEvent",
+    "filepath": "fastapi/sse.py",
+    "chunk_type": "class",
+    "symbol_name": "ServerSentEvent",
+    "start_line": 52,
+    "end_line": 156,
+    "has_docstring": true
+  },
+  {
+    "chunk_id": "fastapi/sse.py::_split_sse_lines",
+    "filepath": "fastapi/sse.py",
+    "chunk_type": "function",
+    "symbol_name": "_split_sse_lines",
+    "start_line": 159,
+    "end_line": 162,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/sse.py::format_sse_event",
+    "filepath": "fastapi/sse.py",
+    "chunk_type": "function",
+    "symbol_name": "format_sse_event",
+    "start_line": 165,
+    "end_line": 233,
+    "has_docstring": true
+  },
+  {
+    "chunk_id": "fastapi/staticfiles.py::module_context",
+    "filepath": "fastapi/staticfiles.py",
+    "chunk_type": "module_context",
+    "symbol_name": null,
+    "start_line": 1,
+    "end_line": 1,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/templating.py::module_context",
+    "filepath": "fastapi/templating.py",
+    "chunk_type": "module_context",
+    "symbol_name": null,
+    "start_line": 1,
+    "end_line": 1,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/testclient.py::module_context",
+    "filepath": "fastapi/testclient.py",
+    "chunk_type": "module_context",
+    "symbol_name": null,
+    "start_line": 1,
+    "end_line": 1,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/types.py::module_context",
+    "filepath": "fastapi/types.py",
+    "chunk_type": "module_context",
+    "symbol_name": null,
+    "start_line": 1,
+    "end_line": 7,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/utils.py::module_context",
+    "filepath": "fastapi/utils.py",
+    "chunk_type": "module_context",
+    "symbol_name": null,
+    "start_line": 1,
+    "end_line": 23,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/utils.py::is_body_allowed_for_status_code",
+    "filepath": "fastapi/utils.py",
+    "chunk_type": "function",
+    "symbol_name": "is_body_allowed_for_status_code",
+    "start_line": 26,
+    "end_line": 40,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/utils.py::get_path_param_names",
+    "filepath": "fastapi/utils.py",
+    "chunk_type": "function",
+    "symbol_name": "get_path_param_names",
+    "start_line": 43,
+    "end_line": 44,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/utils.py::create_model_field",
+    "filepath": "fastapi/utils.py",
+    "chunk_type": "function",
+    "symbol_name": "create_model_field",
+    "start_line": 58,
+    "end_line": 77,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/utils.py::generate_operation_id_for_path",
+    "filepath": "fastapi/utils.py",
+    "chunk_type": "function",
+    "symbol_name": "generate_operation_id_for_path",
+    "start_line": 80,
+    "end_line": 92,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/utils.py::generate_unique_id",
+    "filepath": "fastapi/utils.py",
+    "chunk_type": "function",
+    "symbol_name": "generate_unique_id",
+    "start_line": 95,
+    "end_line": 100,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/utils.py::deep_dict_update",
+    "filepath": "fastapi/utils.py",
+    "chunk_type": "function",
+    "symbol_name": "deep_dict_update",
+    "start_line": 103,
+    "end_line": 118,
+    "has_docstring": false
+  },
+  {
+    "chunk_id": "fastapi/utils.py::get_value_or_default",
+    "filepath": "fastapi/utils.py",
+    "chunk_type": "function",
+    "symbol_name": "get_value_or_default",
+    "start_line": 121,
+    "end_line": 136,
+    "has_docstring": true
+  },
+  {
+    "chunk_id": "fastapi/websockets.py::module_context",
+    "filepath": "fastapi/websockets.py",
+    "chunk_type": "module_context",
+    "symbol_name": null,
+    "start_line": 1,
+    "end_line": 3,
+    "has_docstring": false
+  }
+]

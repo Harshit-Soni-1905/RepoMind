@@ -1,0 +1,5 @@
+{"question_id": "tiny_001", "question": "Where is foo defined?", "relevant_chunk_ids": ["a.py::foo"], "relevant_filepaths": ["a.py"], "category": "symbol_lookup", "difficulty": "easy"}
+{"question_id": "tiny_002", "question": "What calls foo?", "relevant_chunk_ids": ["a.py::bar"], "relevant_filepaths": ["a.py"], "category": "call_chain", "difficulty": "easy"}
+{"question_id": "tiny_003", "question": "What does bar import?", "relevant_chunk_ids": ["b.py::baz"], "relevant_filepaths": ["b.py"], "category": "dependency_trace", "difficulty": "easy"}
+{"question_id": "tiny_004", "question": "How does baz relate to foo?", "relevant_chunk_ids": ["a.py::foo", "a.py::bar", "b.py::baz"], "relevant_filepaths": ["a.py", "b.py"], "category": "cross_file", "difficulty": "medium"}
+{"question_id": "tiny_005", "question": "Is there a function called qux?", "relevant_chunk_ids": [], "relevant_filepaths": [], "category": "negative", "difficulty": "easy"}

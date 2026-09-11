@@ -1,0 +1,132 @@
+{
+  "fastapi/__main__.py": [
+    "fastapi/cli.py"
+  ],
+  "fastapi/_compat/shared.py": [
+    "fastapi/types.py"
+  ],
+  "fastapi/_compat/v2.py": [
+    "fastapi/_compat/__init__.py",
+    "fastapi/openapi/constants.py",
+    "fastapi/types.py"
+  ],
+  "fastapi/applications.py": [
+    "fastapi/__init__.py",
+    "fastapi/datastructures.py",
+    "fastapi/exception_handlers.py",
+    "fastapi/exceptions.py",
+    "fastapi/logger.py",
+    "fastapi/middleware/asyncexitstack.py",
+    "fastapi/openapi/docs.py",
+    "fastapi/openapi/utils.py",
+    "fastapi/params.py",
+    "fastapi/types.py",
+    "fastapi/utils.py"
+  ],
+  "fastapi/dependencies/models.py": [
+    "fastapi/_compat/__init__.py",
+    "fastapi/security/base.py",
+    "fastapi/types.py"
+  ],
+  "fastapi/dependencies/utils.py": [
+    "fastapi/__init__.py",
+    "fastapi/_compat/__init__.py",
+    "fastapi/background.py",
+    "fastapi/concurrency.py",
+    "fastapi/dependencies/models.py",
+    "fastapi/exceptions.py",
+    "fastapi/logger.py",
+    "fastapi/security/oauth2.py",
+    "fastapi/types.py",
+    "fastapi/utils.py"
+  ],
+  "fastapi/encoders.py": [
+    "fastapi/exceptions.py",
+    "fastapi/types.py"
+  ],
+  "fastapi/exception_handlers.py": [
+    "fastapi/encoders.py",
+    "fastapi/exceptions.py",
+    "fastapi/utils.py",
+    "fastapi/websockets.py"
+  ],
+  "fastapi/openapi/docs.py": [
+    "fastapi/encoders.py"
+  ],
+  "fastapi/openapi/models.py": [
+    "fastapi/_compat/__init__.py",
+    "fastapi/logger.py"
+  ],
+  "fastapi/openapi/utils.py": [
+    "fastapi/__init__.py",
+    "fastapi/_compat/__init__.py",
+    "fastapi/datastructures.py",
+    "fastapi/dependencies/models.py",
+    "fastapi/dependencies/utils.py",
+    "fastapi/encoders.py",
+    "fastapi/exceptions.py",
+    "fastapi/openapi/constants.py",
+    "fastapi/openapi/models.py",
+    "fastapi/params.py",
+    "fastapi/responses.py",
+    "fastapi/sse.py",
+    "fastapi/types.py",
+    "fastapi/utils.py"
+  ],
+  "fastapi/param_functions.py": [
+    "fastapi/__init__.py",
+    "fastapi/_compat/__init__.py",
+    "fastapi/datastructures.py",
+    "fastapi/openapi/models.py"
+  ],
+  "fastapi/params.py": [
+    "fastapi/exceptions.py",
+    "fastapi/openapi/models.py"
+  ],
+  "fastapi/responses.py": [
+    "fastapi/exceptions.py",
+    "fastapi/sse.py"
+  ],
+  "fastapi/routing.py": [
+    "fastapi/__init__.py",
+    "fastapi/_compat/__init__.py",
+    "fastapi/datastructures.py",
+    "fastapi/dependencies/models.py",
+    "fastapi/dependencies/utils.py",
+    "fastapi/encoders.py",
+    "fastapi/exceptions.py",
+    "fastapi/sse.py",
+    "fastapi/types.py",
+    "fastapi/utils.py"
+  ],
+  "fastapi/security/api_key.py": [
+    "fastapi/openapi/models.py",
+    "fastapi/security/base.py"
+  ],
+  "fastapi/security/base.py": [
+    "fastapi/openapi/models.py"
+  ],
+  "fastapi/security/http.py": [
+    "fastapi/exceptions.py",
+    "fastapi/openapi/models.py",
+    "fastapi/security/base.py",
+    "fastapi/security/utils.py"
+  ],
+  "fastapi/security/oauth2.py": [
+    "fastapi/exceptions.py",
+    "fastapi/openapi/models.py",
+    "fastapi/param_functions.py",
+    "fastapi/security/base.py",
+    "fastapi/security/utils.py"
+  ],
+  "fastapi/security/open_id_connect_url.py": [
+    "fastapi/openapi/models.py",
+    "fastapi/security/base.py"
+  ],
+  "fastapi/utils.py": [
+    "fastapi/__init__.py",
+    "fastapi/_compat/__init__.py",
+    "fastapi/datastructures.py",
+    "fastapi/exceptions.py"
+  ]
+}
