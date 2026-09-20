@@ -235,3 +235,138 @@ def test_sse_event_names_contract():
 
     # done event must be present
     assert "done" in event_names, f"Missing 'done' event. Got: {event_names}"
+
+
+# ---- Indexing persistence and DB fallback regression tests ----
+
+
+def test_initial_pending_progress_persisted_to_db(rate_limited_client, monkeypatch):
+    """Verify that initial PENDING progress is written to SQLite immediately on indexing request.
+
+    Regression test for: 404 Not Found on /status if in-memory state is queried
+    before background worker updates or if worker crashes.
+    """
+    # Block clone so we can verify initial database state
+    def blocked_clone(repo_url, repo_id, branch="main", progress_callback=None):
+        return True, Path(tempfile.gettempdir()), None
+
+    monkeypatch.setattr(
+        rate_limited_client.app.state.repo_service,
+        "clone_repository",
+        blocked_clone,
+    )
+    monkeypatch.setattr(
+        rate_limited_client.app.state.repo_service,
+        "validate_repository_size",
+        lambda p: (True, None),
+    )
+    monkeypatch.setattr(
+        rate_limited_client.app.state.repo_service,
+        "index_repository",
+        lambda repo_id, repo_path, progress_callback=None: (True, None),
+    )
+
+    response = rate_limited_client.post(
+        "/api/repos/index",
+        json={"repo_url": "https://github.com/user/test-repo", "branch": "main"},
+    )
+    assert response.status_code == 200
+    data = response.json()
+    repo_id = data["repo_id"]
+    job_id = data["job_id"]
+    assert repo_id == job_id
+
+    # Verify directly from SQLite DB
+    db = rate_limited_client.app.state.db
+    saved_progress = db.get_job_progress(repo_id)
+    assert saved_progress is not None, "Initial progress was not saved to SQLite database"
+    assert saved_progress.repo_id == repo_id
+    assert saved_progress.job_id == job_id
+
+
+def test_status_endpoint_survives_jobmanager_cache_loss(rate_limited_client):
+    """Verify that /status succeeds from SQLite even when JobManager memory cache is wiped.
+
+    Regression test for: ephemeral in-memory JobManager state loss causing 404 errors.
+    """
+    from repomind.application.models import JobStatus, IndexingProgress, RepositoryInfo
+
+    db = rate_limited_client.app.state.db
+    job_manager = rate_limited_client.app.state.job_manager
+
+    repo_id = "test-survive-cache-loss"
+    repo_info = RepositoryInfo(
+        repo_id=repo_id,
+        repo_url="https://github.com/test/survive",
+        branch="main",
+        status=JobStatus.PARSING,
+        file_count=10,
+        chunk_count=25,
+    )
+    db.save_repository(repo_info)
+
+    db_progress = IndexingProgress(
+        repo_id=repo_id,
+        job_id=repo_id,
+        status=JobStatus.PARSING,
+        progress=45,
+        message="Parsing AST nodes...",
+    )
+    db.save_job_progress(db_progress)
+
+    # Ensure in-memory cache is empty for this repo
+    job_manager.jobs.pop(repo_id, None)
+    assert job_manager.get_job_status(repo_id) is None
+
+    # Call status endpoint
+    response = rate_limited_client.get(f"/api/repos/{repo_id}/status")
+    assert response.status_code == 200
+    data = response.json()
+    assert data["repo_id"] == repo_id
+    assert data["job_id"] == repo_id
+    assert data["status"] == "parsing"
+    assert data["progress"] == 45
+    assert data["message"] == "Parsing AST nodes..."
+    assert data["file_count"] == 10
+    assert data["chunk_count"] == 25
+
+
+def test_job_manager_subscribe_replays_existing_progress():
+    """Verify that JobManager.subscribe immediately replays cached state to new listeners.
+
+    Regression test for: subscription race condition where start_indexing_job
+    emits initial progress before the database listener is attached.
+    """
+    from repomind.application.models import JobStatus, IndexingProgress
+    from repomind.application.job_manager import JobManager
+
+    jm = JobManager()
+    progress = IndexingProgress(
+        repo_id="test-replay",
+        job_id="test-replay",
+        status=JobStatus.PENDING,
+        progress=0,
+        message="Queued",
+    )
+    jm._update_progress(progress)
+
+    received_events = []
+    jm.subscribe("test-replay", lambda p: received_events.append(p))
+
+    # The existing progress must have been immediately replayed upon subscription
+    assert len(received_events) == 1
+    assert received_events[0].repo_id == "test-replay"
+    assert received_events[0].status == JobStatus.PENDING
+
+    # Future updates must also be received
+    next_progress = IndexingProgress(
+        repo_id="test-replay",
+        job_id="test-replay",
+        status=JobStatus.CLONING,
+        progress=10,
+        message="Cloning...",
+    )
+    jm._update_progress(next_progress)
+    assert len(received_events) == 2
+    assert received_events[1].status == JobStatus.CLONING
+

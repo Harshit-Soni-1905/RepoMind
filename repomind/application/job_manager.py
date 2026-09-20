@@ -1,6 +1,7 @@
 """Background job management for repository indexing."""
 
 import asyncio
+import threading
 from typing import Dict, Optional, Callable, List
 from datetime import datetime
 import logging
@@ -30,6 +31,7 @@ class JobManager:
         self.executor = ThreadPoolExecutor(max_workers=max_workers)
         self.jobs: Dict[str, IndexingProgress] = {}
         self.listeners: Dict[str, List[Callable[[IndexingProgress], None]]] = {}
+        self._lock = threading.Lock()
 
     def get_job_status(self, job_id: str) -> Optional[IndexingProgress]:
         """Get the current progress of a job.
@@ -40,41 +42,65 @@ class JobManager:
         Returns:
             IndexingProgress or None if job not found
         """
-        return self.jobs.get(job_id)
+        with self._lock:
+            return self.jobs.get(job_id)
 
     def subscribe(self, job_id: str, callback: Callable[[IndexingProgress], None]) -> None:
         """Subscribe to job status updates.
+
+        If progress already exists for this job (e.g. initial PENDING set
+        by ``start_indexing_job`` before subscribe is called), the callback
+        is immediately invoked with the current state under lock so no
+        transitions are missed or overwritten out of order.
 
         Args:
             job_id: Job identifier
             callback: Function to call on progress updates
         """
-        if job_id not in self.listeners:
-            self.listeners[job_id] = []
-        self.listeners[job_id].append(callback)
+        with self._lock:
+            if job_id not in self.listeners:
+                self.listeners[job_id] = []
+            self.listeners[job_id].append(callback)
+            current = self.jobs.get(job_id)
+
+        if current is not None:
+            try:
+                callback(current)
+            except Exception as e:
+                logger.error(f"Error replaying progress to new listener: {e}")
 
     def unsubscribe(self, job_id: str, callback: Callable[[IndexingProgress], None]) -> None:
         """Unsubscribe from job status updates."""
-        if job_id in self.listeners:
-            self.listeners[job_id] = [c for c in self.listeners[job_id] if c != callback]
+        with self._lock:
+            if job_id in self.listeners:
+                self.listeners[job_id] = [c for c in self.listeners[job_id] if c != callback]
 
     def _update_progress(self, progress: IndexingProgress) -> None:
         """Update job progress state and notify listeners."""
-        self.jobs[progress.job_id] = progress
-        listeners = self.listeners.get(progress.job_id, [])
+        with self._lock:
+            self.jobs[progress.job_id] = progress
+            listeners = list(self.listeners.get(progress.job_id, []))
+
         for listener in listeners:
             try:
                 listener(progress)
             except Exception as e:
                 logger.error(f"Error in job progress listener: {e}")
 
-    def start_indexing_job(self, repo_url: str, repo_id: str, branch: str = "main") -> str:
+    def start_indexing_job(
+        self,
+        repo_url: str,
+        repo_id: str,
+        branch: str = "main",
+        on_progress: Optional[Callable[[IndexingProgress], None]] = None,
+    ) -> str:
         """Start an indexing job in background thread pool.
 
         Args:
             repo_url: Repository URL
             repo_id: Unique repository ID
             branch: Repository branch
+            on_progress: Optional callback registered BEFORE background worker starts
 
         Returns:
             job_id (same as repo_id)
@@ -89,9 +115,22 @@ class JobManager:
             progress=0,
             message="Job queued for processing",
         )
-        self._update_progress(initial_progress)
 
-        # Submit background task to thread pool
+        with self._lock:
+            if on_progress:
+                if job_id not in self.listeners:
+                    self.listeners[job_id] = []
+                self.listeners[job_id].append(on_progress)
+            self.jobs[job_id] = initial_progress
+
+        # Dispatch initial progress to pre-registered listener
+        if on_progress:
+            try:
+                on_progress(initial_progress)
+            except Exception as e:
+                logger.error(f"Error notifying initial progress listener: {e}")
+
+        # Submit background task to thread pool AFTER listener is active
         self.executor.submit(self._run_indexing_job, repo_url, repo_id, branch)
         return job_id
 

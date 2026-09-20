@@ -17,7 +17,7 @@ from repomind.api.models.responses import (
     ToolExecutionResponse,
     ErrorResponse,
 )
-from repomind.application.models import JobStatus, RepositoryInfo
+from repomind.application.models import JobStatus, RepositoryInfo, IndexingProgress
 from repomind.application.query_service import QueryService
 
 logger = logging.getLogger(__name__)
@@ -60,19 +60,33 @@ async def index_repository(
     )
     db.save_repository(repo_info)
 
+    # Persist initial PENDING progress to the database *before* the
+    # background job starts, so the status endpoint can always find it
+    # even if the process restarts before any listener fires.
+    initial_progress = IndexingProgress(
+        repo_id=repo_id,
+        job_id=repo_id,
+        status=JobStatus.PENDING,
+        progress=0,
+        message="Job queued for processing",
+    )
+    db.save_job_progress(initial_progress)
+
+    # Subscribe to job updates to persist to database.
+    # Must be registered BEFORE start_indexing_job so the listener
+    # catches every update from the background thread.
+    def persist_progress(progress):
+        db.save_job_progress(progress)
+        # Update repository status
+        repo_info.status = progress.status
+        db.save_repository(repo_info)
+
     # Start background job
     job_id = job_manager.start_indexing_job(
         repo_url=repo_url,
         repo_id=repo_id,
         branch=body.branch or "main",
     )
-
-    # Subscribe to job updates to persist to database
-    def persist_progress(progress):
-        db.save_job_progress(progress)
-        # Update repository status
-        repo_info.status = progress.status
-        db.save_repository(repo_info)
 
     job_manager.subscribe(job_id, persist_progress)
 
