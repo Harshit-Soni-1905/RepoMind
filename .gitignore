@@ -73,3 +73,6 @@ logs/
 # Documentation builds
 docs/_build/
 docs/.doctrees/
+
+# Local RepoMind runtime data
+.repomind_data/
