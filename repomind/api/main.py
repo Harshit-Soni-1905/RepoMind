@@ -63,12 +63,15 @@ def create_app(requests_per_minute: int = 60) -> FastAPI:
 
     # CORS middleware
     app.add_middleware(
-        CORSMiddleware,
-        allow_origins=["http://localhost:5173", "http://localhost:3000"],  # Vite default ports
-        allow_credentials=True,
-        allow_methods=["*"],
-        allow_headers=["*"],
-    )
+    CORSMiddleware,
+    allow_origins=[
+        "http://localhost:5173",
+        "https://repomind-frontend-o43b.onrender.com",
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
     # Rate limiting middleware
     app.add_middleware(RateLimitMiddleware, requests_per_minute=requests_per_minute)
