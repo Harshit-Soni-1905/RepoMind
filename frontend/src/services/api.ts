@@ -10,7 +10,11 @@ import type {
   SSEEvent,
 } from '../types/api';
 
-const API_BASE_URL = '/api';
+// In production, VITE_API_URL points to the deployed backend
+// (e.g. https://repomind-api-x1qk.onrender.com).
+// In local dev it's unset — the Vite dev-server proxy handles /api.
+const BACKEND_URL = import.meta.env.VITE_API_URL || '';
+const API_BASE_URL = `${BACKEND_URL}/api`;
 
 export class APIError extends Error {
   constructor(
@@ -40,7 +44,7 @@ export const api = {
    * Check API health status
    */
   async healthCheck(): Promise<{ status: string }> {
-    const response = await fetch('/health');
+    const response = await fetch(`${BACKEND_URL}/health`);
     return handleResponse(response);
   },
 
