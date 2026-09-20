@@ -2,6 +2,7 @@
 
 import pytest
 import numpy as np
+from unittest.mock import MagicMock, patch
 
 from repomind.vectorstore.embedder import Embedder
 from repomind.config import config
@@ -135,3 +136,86 @@ def test_embedder_semantic_similarity():
 
     # Similar texts should have higher similarity
     assert sim_12 > sim_13
+
+
+# ---- Batching regression tests ----
+
+def test_embedder_batch_smaller_than_batch_size():
+    """embed_batch with fewer texts than batch_size should work correctly."""
+    embedder = Embedder()
+    texts = [
+        "def hello(): pass",
+        "class Foo: pass",
+    ]  # 2 texts, batch_size default 32
+
+    embeddings = embedder.embed_batch(texts)
+
+    assert isinstance(embeddings, np.ndarray)
+    assert embeddings.shape == (2, config.EMBEDDING_DIMENSION)
+
+
+def test_embedder_batch_larger_than_batch_size():
+    """embed_batch with more texts than batch_size should process in multiple batches."""
+    embedder = Embedder()
+    # 100 texts, batch_size default 32 -> 4 batches (32, 32, 32, 4)
+    texts = [f"def func_{i}(): pass" for i in range(100)]
+
+    embeddings = embedder.embed_batch(texts)
+
+    assert isinstance(embeddings, np.ndarray)
+    assert embeddings.shape == (100, config.EMBEDDING_DIMENSION)
+
+
+def test_embedder_batch_correct_order_and_shape():
+    """Embeddings should be in same order as input with correct shape."""
+    embedder = Embedder()
+    texts = [f"def func_{i}(): return {i}" for i in range(50)]
+
+    embeddings = embedder.embed_batch(texts, batch_size=16)
+
+    assert embeddings.shape == (50, config.EMBEDDING_DIMENSION)
+    # Verify order preserved - each embedding should be different
+    for i in range(1, len(embeddings)):
+        assert not np.allclose(embeddings[i], embeddings[i-1])
+
+
+def test_embedder_batch_empty_input():
+    """embed_batch with empty list should return empty array."""
+    embedder = Embedder()
+    embeddings = embedder.embed_batch([])
+
+    assert isinstance(embeddings, np.ndarray)
+    assert embeddings.shape == (0,)
+
+
+def test_embedder_batch_calls_model_multiple_times(monkeypatch):
+    """embed_batch should call underlying model multiple times when input exceeds batch_size."""
+    embedder = Embedder()
+    # Force model to load
+    _ = embedder.dimension
+
+    call_count = 0
+
+    def mock_encode(batch, convert_to_numpy=True):
+        nonlocal call_count
+        call_count += 1
+        # Return fake embeddings of correct shape
+        return np.random.rand(len(batch), config.EMBEDDING_DIMENSION).astype(np.float32)
+
+    with patch.object(Embedder._model, 'encode', side_effect=mock_encode):
+        texts = [f"text_{i}" for i in range(100)]
+        embeddings = embedder.embed_batch(texts, batch_size=32)
+
+    # 100 texts with batch_size=32 should call encode 4 times (32+32+32+4)
+    assert call_count == 4
+    assert embeddings.shape == (100, config.EMBEDDING_DIMENSION)
+
+
+def test_embedder_batch_custom_batch_size():
+    """embed_batch should respect custom batch_size parameter."""
+    embedder = Embedder()
+    texts = [f"def func_{i}(): pass" for i in range(10)]
+
+    embeddings = embedder.embed_batch(texts, batch_size=3)
+
+    assert embeddings.shape == (10, config.EMBEDDING_DIMENSION)

@@ -36,6 +36,8 @@ class Config:
         "sentence-transformers/all-MiniLM-L6-v2"  # 384 dims, fast, local
     )
     EMBEDDING_DIMENSION: int = 384  # Matches all-MiniLM-L6-v2
+    # Batch size for embedding generation to control memory usage
+    EMBEDDING_BATCH_SIZE: int = int(os.getenv("REPOMIND_EMBEDDING_BATCH_SIZE", "32"))
 
     # ===== Vector Store Configuration =====
     VECTOR_STORE_PATH: Path = Path(

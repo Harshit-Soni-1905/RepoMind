@@ -53,22 +53,43 @@ class Embedder:
         embedding = Embedder._model.encode([text], convert_to_numpy=True)
         return embedding[0]
 
-    def embed_batch(self, texts: List[str]) -> np.ndarray:
-        """Generate embeddings for a batch of text strings.
+    def embed_batch(
+        self,
+        texts: List[str],
+        batch_size: int = None,
+    ) -> np.ndarray:
+        """Generate embeddings for a batch of text strings with memory-safe batching.
+
+        Processes texts in smaller batches to control peak memory usage,
+        which is critical for constrained environments like Render free tier.
 
         Args:
             texts: List of texts to embed
+            batch_size: Maximum number of texts to process at once.
+                       Defaults to config.EMBEDDING_BATCH_SIZE.
 
         Returns:
             Numpy array of shape (num_texts, embedding_dim) containing embedding vectors
+            in the same order as input texts.
         """
         if not texts:
             return np.array([])
 
+        if batch_size is None:
+            batch_size = config.EMBEDDING_BATCH_SIZE
+
         self._load_model()
-        # encode() returns ndarray of shape (num_texts, embedding_dim)
-        embeddings = Embedder._model.encode(texts, convert_to_numpy=True)
-        return embeddings
+        all_embeddings = []
+
+        # Process in batches to limit memory
+        for i in range(0, len(texts), batch_size):
+            batch = texts[i:i + batch_size]
+            embeddings = Embedder._model.encode(batch, convert_to_numpy=True)
+            all_embeddings.append(embeddings)
+
+        if all_embeddings:
+            return np.vstack(all_embeddings)
+        return np.array([])
 
     @property
     def dimension(self) -> int:
