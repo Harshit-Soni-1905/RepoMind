@@ -379,3 +379,153 @@ def test_vectorstore_handles_special_characters(in_memory_store):
     results = in_memory_store.search("pattern matching", top_k=1)
     assert len(results) == 1
     assert results[0].chunk.symbol_name == "regex_match"
+
+
+# ---- Incremental Batching Tests ----
+
+def test_vectorstore_add_chunks_multi_batch(in_memory_store):
+    """VectorStore should successfully index chunks when processed across multiple batches."""
+    chunks = [
+        CodeChunk(
+            chunk_id=f"func_{i}.py::func_{i}",
+            filepath=Path(f"func_{i}.py"),
+            chunk_type="function",
+            symbol_name=f"func_{i}",
+            source_code=f"def func_{i}():\n    return {i}",
+            start_line=1,
+            end_line=2,
+            docstring=f"Function number {i}",
+        )
+        for i in range(10)
+    ]
+
+    # Process 10 chunks in batches of 3 (4 batches: 3, 3, 3, 1)
+    count = in_memory_store.add_chunks(chunks, batch_size=3)
+
+    assert count == 10
+    assert in_memory_store.count() == 10
+
+    # Verify search retrieves items across batches
+    results = in_memory_store.search("function return", top_k=10)
+    assert len(results) == 10
+
+
+def test_vectorstore_add_chunks_batch_size_one(in_memory_store, sample_chunks):
+    """VectorStore should handle batch_size=1 without issues."""
+    count = in_memory_store.add_chunks(sample_chunks, batch_size=1)
+
+    assert count == len(sample_chunks)
+    assert in_memory_store.count() == len(sample_chunks)
+
+
+def test_vectorstore_add_chunks_batch_size_larger_than_total(in_memory_store, sample_chunks):
+    """VectorStore should handle batch_size greater than total chunks."""
+    count = in_memory_store.add_chunks(sample_chunks, batch_size=100)
+
+    assert count == len(sample_chunks)
+    assert in_memory_store.count() == len(sample_chunks)
+
+
+def test_vectorstore_add_chunks_incremental_embed_and_upsert_calls():
+    """VectorStore should call embed_batch and collection.upsert per batch slice."""
+    from unittest.mock import MagicMock, patch
+
+    mock_embedder = MagicMock(spec=Embedder)
+    # Return dummy numpy embedding array for any batch
+    mock_embedder.embed_batch.side_effect = lambda texts, batch_size=None: np.zeros((len(texts), 384))
+
+    store = VectorStore(
+        collection_name="mock_batch_test",
+        persist_dir=":memory:",
+        embedder=mock_embedder,
+    )
+
+    # Mock collection.upsert
+    store.collection.upsert = MagicMock()
+
+    chunks = [
+        CodeChunk(
+            chunk_id=f"item_{i}.py::item_{i}",
+            filepath=Path(f"item_{i}.py"),
+            chunk_type="function",
+            symbol_name=f"item_{i}",
+            source_code=f"def item_{i}(): pass",
+            start_line=1,
+            end_line=1,
+        )
+        for i in range(25)
+    ]
+
+    # 25 chunks with batch_size=10 -> 3 batches (10, 10, 5)
+    count = store.add_chunks(chunks, batch_size=10)
+
+    assert count == 25
+    assert mock_embedder.embed_batch.call_count == 3
+    assert store.collection.upsert.call_count == 3
+
+    # Check batch sizes in embedder calls
+    embed_calls = mock_embedder.embed_batch.call_args_list
+    assert len(embed_calls[0][0][0]) == 10
+    assert len(embed_calls[1][0][0]) == 10
+    assert len(embed_calls[2][0][0]) == 5
+
+    # Check batch sizes in upsert calls
+    upsert_calls = store.collection.upsert.call_args_list
+    assert len(upsert_calls[0][1]["ids"]) == 10
+    assert len(upsert_calls[1][1]["ids"]) == 10
+    assert len(upsert_calls[2][1]["ids"]) == 5
+
+
+def test_vectorstore_add_chunks_duplicate_disambiguation_across_batches(in_memory_store):
+    """Duplicate chunk IDs appearing across different batches should be properly disambiguated."""
+    # 6 chunks with identical base chunk_id across multiple batches (batch_size=2 -> 3 batches)
+    chunks = [
+        CodeChunk(
+            chunk_id="collision.py::foo",
+            filepath=Path("collision.py"),
+            chunk_type="function",
+            symbol_name="foo",
+            source_code=f"def foo(): return {i}",
+            start_line=i * 10 + 1,
+            end_line=i * 10 + 5,
+        )
+        for i in range(6)
+    ]
+
+    count = in_memory_store.add_chunks(chunks, batch_size=2)
+
+    assert count == 6
+    assert in_memory_store.count() == 6
+
+
+def test_vectorstore_preserves_metadata_across_batches(in_memory_store):
+    """Metadata should be preserved for all chunks when indexed across multiple batches."""
+    chunks = [
+        CodeChunk(
+            chunk_id=f"service_{i}.py::Service{i}.run",
+            filepath=Path(f"service_{i}.py"),
+            chunk_type="method",
+            symbol_name="run",
+            source_code=f"@logger\ndef run(self):\n    '''Run service {i}'''\n    return {i}",
+            start_line=10,
+            end_line=15,
+            docstring=f"Run service {i}",
+            parent_class=f"Service{i}",
+            decorators=["@logger"],
+        )
+        for i in range(6)
+    ]
+
+    in_memory_store.add_chunks(chunks, batch_size=2)
+
+    results = in_memory_store.search("Run service 3", top_k=6)
+    assert len(results) == 6
+
+    # Verify metadata fields are preserved
+    for r in results:
+        assert r.chunk.parent_class is not None
+        assert r.chunk.parent_class.startswith("Service")
+        assert r.chunk.decorators == ["@logger"]
+        assert r.chunk.start_line == 10
+        assert r.chunk.end_line == 15
+

@@ -50,17 +50,23 @@ class VectorStore:
             metadata={"hnsw:space": "cosine"},
         )
 
-    def add_chunks(self, chunks: List[CodeChunk]) -> int:
+    def add_chunks(
+        self,
+        chunks: List[CodeChunk],
+        batch_size: Optional[int] = None,
+    ) -> int:
         """Upsert a list of CodeChunk objects into the vector store.
 
-        Generates embeddings for each chunk's source_code and stores them
-        alongside chunk metadata and raw source code.
+        Generates embeddings and upserts records in small, memory-safe batches
+        to avoid holding the full repository embedding matrix in memory at once.
 
         Deterministic chunk IDs ensure that calling add_chunks repeatedly with
         the same chunks will update (upsert) existing records rather than create duplicates.
 
         Args:
             chunks: List of CodeChunk objects to index
+            batch_size: Maximum number of chunks to process in each embedding/upsert batch.
+                       Defaults to config.EMBEDDING_BATCH_SIZE.
 
         Returns:
             Number of chunks successfully added/upserted
@@ -68,55 +74,67 @@ class VectorStore:
         if not chunks:
             return 0
 
-        ids: List[str] = []
-        documents: List[str] = []
-        metadatas: List[Dict[str, Any]] = []
-        texts_to_embed: List[str] = []
+        if batch_size is None:
+            batch_size = config.EMBEDDING_BATCH_SIZE
+
+        batch_size = max(1, batch_size)
+
         seen_ids: set = set()
+        total_added = 0
 
-        for chunk in chunks:
-            chunk_id = chunk.chunk_id
-            if chunk_id in seen_ids:
-                # Disambiguate duplicate ID with start_line if not already present
-                if f"@{chunk.start_line}" not in chunk_id:
-                    chunk_id = f"{chunk_id}@{chunk.start_line}"
+        for i in range(0, len(chunks), batch_size):
+            batch_chunks = chunks[i : i + batch_size]
+
+            ids: List[str] = []
+            documents: List[str] = []
+            metadatas: List[Dict[str, Any]] = []
+            texts_to_embed: List[str] = []
+
+            for chunk in batch_chunks:
+                chunk_id = chunk.chunk_id
                 if chunk_id in seen_ids:
-                    counter = 2
-                    while f"{chunk_id}_{counter}" in seen_ids:
-                        counter += 1
-                    chunk_id = f"{chunk_id}_{counter}"
-            seen_ids.add(chunk_id)
+                    # Disambiguate duplicate ID with start_line if not already present
+                    if f"@{chunk.start_line}" not in chunk_id:
+                        chunk_id = f"{chunk_id}@{chunk.start_line}"
+                    if chunk_id in seen_ids:
+                        counter = 2
+                        while f"{chunk_id}_{counter}" in seen_ids:
+                            counter += 1
+                        chunk_id = f"{chunk_id}_{counter}"
+                seen_ids.add(chunk_id)
 
-            ids.append(chunk_id)
-            documents.append(chunk.source_code)
-            texts_to_embed.append(chunk.source_code)
+                ids.append(chunk_id)
+                documents.append(chunk.source_code)
+                texts_to_embed.append(chunk.source_code)
 
-            # Metadata in ChromaDB must be primitive types: str, int, float, bool
-            meta: Dict[str, Any] = {
-                "filepath": chunk.filepath.as_posix(),
-                "chunk_type": chunk.chunk_type,
-                "symbol_name": chunk.symbol_name or "",
-                "start_line": chunk.start_line,
-                "end_line": chunk.end_line,
-                "docstring": chunk.docstring or "",
-                "parent_class": chunk.parent_class or "",
-                "decorators": ",".join(chunk.decorators) if chunk.decorators else "",
-            }
-            metadatas.append(meta)
+                # Metadata in ChromaDB must be primitive types: str, int, float, bool
+                meta: Dict[str, Any] = {
+                    "filepath": chunk.filepath.as_posix(),
+                    "chunk_type": chunk.chunk_type,
+                    "symbol_name": chunk.symbol_name or "",
+                    "start_line": chunk.start_line,
+                    "end_line": chunk.end_line,
+                    "docstring": chunk.docstring or "",
+                    "parent_class": chunk.parent_class or "",
+                    "decorators": ",".join(chunk.decorators) if chunk.decorators else "",
+                }
+                metadatas.append(meta)
 
-        # Generate embeddings in batch
-        embeddings = self.embedder.embed_batch(texts_to_embed)
-        embeddings_list = embeddings.tolist()
+            # Generate embeddings for this batch only
+            embeddings = self.embedder.embed_batch(texts_to_embed, batch_size=batch_size)
+            embeddings_list = embeddings.tolist()
 
-        # ChromaDB upsert inserts new records or updates existing ones by ID
-        self.collection.upsert(
-            ids=ids,
-            embeddings=embeddings_list,
-            documents=documents,
-            metadatas=metadatas,
-        )
+            # ChromaDB upsert for this batch only
+            self.collection.upsert(
+                ids=ids,
+                embeddings=embeddings_list,
+                documents=documents,
+                metadatas=metadatas,
+            )
 
-        return len(chunks)
+            total_added += len(batch_chunks)
+
+        return total_added
 
     def search(
         self,
