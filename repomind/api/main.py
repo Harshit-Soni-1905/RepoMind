@@ -1,6 +1,7 @@
 """FastAPI application entry point."""
 
 import logging
+import os
 from pathlib import Path
 from contextlib import asynccontextmanager
 from typing import Optional
@@ -122,4 +123,4 @@ def start_server(host: str = "0.0.0.0", port: int = 8000, reload: bool = False):
 
 
 if __name__ == "__main__":
-    start_server(reload=True)
+    start_server(reload=os.getenv("REPOMIND_RELOAD", "false").lower() == "true")
