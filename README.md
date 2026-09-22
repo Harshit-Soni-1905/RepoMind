@@ -44,16 +44,30 @@
 
 ## 📌 Overview
 
-When a developer joins a new codebase, or when an LLM is asked to answer a question about one, the biggest bottleneck isn't intelligence — it's **context**. Repositories are too large to fit entirely into a prompt, and even when they technically fit, dumping raw files into an LLM leads to noisy, unfocused, and often incorrect answers.
+When a developer joins a new codebase — or when an LLM is asked to answer questions about one — the real bottleneck isn't intelligence, it's **context**. Repositories are too large to fit into a single prompt, and even when they technically fit, dumping raw files into an LLM produces noisy, unfocused, often incorrect answers.
 
-**RepoMind** solves this by treating a codebase like a knowledge base instead of a blob of text. It parses Python repositories and Jupyter Notebooks into their underlying structure using **AST (Abstract Syntax Tree) analysis**, breaks the code into logically meaningful chunks, and builds two complementary representations of the project:
+**RepoMind treats a codebase like a knowledge base, not a blob of text.**
 
-- A **semantic index** (embeddings + vector search) capturing *what the code means*
-- A **code graph** (files, functions, classes, imports, calls) capturing *how the code is connected*
+### The Problem
 
-When a user asks a question, an **LLM-powered ReAct agent** doesn't just answer from memory — it actively reasons about the question, calls retrieval tools to pull only the relevant pieces of code from both the semantic index and the graph, and then generates an answer grounded in that retrieved context. This mirrors how a human engineer actually explores an unfamiliar codebase: search for relevant code, trace how it connects to other parts, and reason from there — rather than trying to memorize the entire project at once.
+- Repos are too large for a full context dump
+- Raw file dumps bury relevant code in irrelevant noise
+- LLMs need *structured*, *relevant* context — not everything at once
 
-RepoMind is available both as a **CLI tool** for quick terminal-based exploration and as a full **web application** with real-time indexing progress and streaming responses.
+### How RepoMind Solves It
+
+RepoMind parses Python repositories and Jupyter Notebooks using **AST (Abstract Syntax Tree) analysis**, breaks code into logically meaningful chunks, and builds two complementary representations:
+
+| Representation | Captures | How |
+|---|---|---|
+| **Semantic Index** | *What* the code means | Embeddings + vector search |
+| **Code Graph** | *How* the code connects | Files, functions, classes, imports, calls |
+
+When a user asks a question, an **LLM-powered ReAct agent** doesn't answer from memory alone — it reasons about the question, calls retrieval tools to pull relevant code from both the semantic index and the graph, then generates an answer grounded in that retrieved context.
+
+> This mirrors how a human engineer explores an unfamiliar codebase: search for relevant code, trace how it connects, reason from there — rather than memorizing the entire project at once.
+
+RepoMind ships as both a **CLI tool** for quick terminal use and a full **web application** with real-time indexing progress and streaming responses.
 
 ```text
 Repository
