@@ -40,7 +40,16 @@
 
 ## 📌 Overview
 
-**RepoMind** helps developers understand unfamiliar codebases without dumping an entire repository into an LLM's context window. It builds a structured, searchable representation of a codebase — combining AST-based parsing, semantic embeddings, and a code graph — and retrieves only the relevant context before an LLM-powered agent answers a question.
+When a developer joins a new codebase, or when an LLM is asked to answer a question about one, the biggest bottleneck isn't intelligence — it's **context**. Repositories are too large to fit entirely into a prompt, and even when they technically fit, dumping raw files into an LLM leads to noisy, unfocused, and often incorrect answers.
+
+**RepoMind** solves this by treating a codebase like a knowledge base instead of a blob of text. It parses Python repositories and Jupyter Notebooks into their underlying structure using **AST (Abstract Syntax Tree) analysis**, breaks the code into logically meaningful chunks, and builds two complementary representations of the project:
+
+- A **semantic index** (embeddings + vector search) capturing *what the code means*
+- A **code graph** (files, functions, classes, imports, calls) capturing *how the code is connected*
+
+When a user asks a question, an **LLM-powered ReAct agent** doesn't just answer from memory — it actively reasons about the question, calls retrieval tools to pull only the relevant pieces of code from both the semantic index and the graph, and then generates an answer grounded in that retrieved context. This mirrors how a human engineer actually explores an unfamiliar codebase: search for relevant code, trace how it connects to other parts, and reason from there — rather than trying to memorize the entire project at once.
+
+RepoMind is available both as a **CLI tool** for quick terminal-based exploration and as a full **web application** with real-time indexing progress and streaming responses.
 
 ```text
 Repository
@@ -62,12 +71,22 @@ Answer
 
 ## 🎯 Objective
 
-The objective is to move beyond naive "paste the whole repo into the prompt" approaches and build a system that retrieves *precisely relevant* code context using two complementary signals:
+The core motivation behind RepoMind is to move beyond naive "paste the whole repo into the prompt" approaches to code Q&A, which break down quickly as repositories grow — they're expensive, hit context limits, and bury the relevant code in irrelevant noise.
+
+RepoMind's objective is to build a **retrieval-first system** that identifies and surfaces only the code that actually matters for a given question, using two complementary retrieval signals:
 
 ```text
 Semantic Retrieval  → conceptually related code (embeddings)
 Graph Retrieval      → structurally related code (imports/calls/definitions)
 ```
+
+Specifically, the project aims to:
+
+- Represent a codebase in a way that's both **searchable by meaning** and **traceable by structure**
+- Let an agent **reason iteratively** — retrieve, inspect, retrieve again — instead of answering in a single blind pass
+- Keep retrieval **measurable**, using standard IR metrics (Precision@k, Recall@k, MRR, nDCG@k) rather than relying on subjective "it looks right" judgments
+- Support both **Python scripts and Jupyter Notebooks**, since real-world ML/data science repos mix both
+- Stay usable at a **practical scale** — a CLI for fast local use and a web app for a fuller interactive experience
 
 ---
 
