@@ -17,6 +17,7 @@ from repomind.application.job_manager import JobManager
 from repomind.application.repo_service import RepositoryService
 from repomind.api.database import Database
 from repomind.config import config
+from repomind.utils import log_memory
 
 logger = logging.getLogger(__name__)
 
@@ -26,6 +27,7 @@ async def lifespan(app: FastAPI):
     """Lifespan context manager for startup/shutdown."""
     # Startup
     logger.info("Starting RepoMind API server")
+    log_memory("API_STARTUP")
 
     # Initialize database
     db_path = Path(config.DATA_DIR) / "repomind.db"

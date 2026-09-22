@@ -47,8 +47,12 @@ class Embedder:
                 pass
 
             from sentence_transformers import SentenceTransformer
+            from repomind.utils import log_memory
+
+            log_memory("BEFORE_MODEL_INIT", f"model={self.model_name}")
             Embedder._model = SentenceTransformer(self.model_name)
             Embedder._model_name = self.model_name
+            log_memory("MODEL_LOADED", f"model={self.model_name}")
 
     def embed(self, text: str) -> np.ndarray:
         """Generate embedding for a single text string.

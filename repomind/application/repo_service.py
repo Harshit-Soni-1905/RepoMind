@@ -30,6 +30,7 @@ from repomind.chunking.chunker import CodeChunker
 from repomind.vectorstore.embedder import Embedder
 from repomind.vectorstore.store import VectorStore
 from repomind.graph.builder import CodeGraphBuilder
+from repomind.utils import log_memory
 
 
 GRAPH_FILENAME = ".repomind_graph.pickle"
@@ -99,6 +100,7 @@ class RepositoryService:
             Tuple of (success, local_path, error_message)
         """
         clone_path = self.storage_root / repo_id
+        log_memory("BEFORE_CLONE", f"repo_id={repo_id}")
 
         if progress_callback:
             progress_callback(IndexingProgress(
@@ -137,6 +139,7 @@ class RepositoryService:
             if not has_supported_files:
                 return False, None, "No supported code files (.py, .ipynb) found in repository"
 
+            log_memory("AFTER_CLONE", f"repo_id={repo_id}")
             return True, clone_path, None
 
         except subprocess.TimeoutExpired:
@@ -203,6 +206,7 @@ class RepositoryService:
 
             scanner = RepositoryScanner(root_path=repo_path)
             code_files = scanner.scan()
+            log_memory("AFTER_SCAN", f"files={len(code_files)}")
 
             if not code_files:
                 return False, "No supported code files (.py, .ipynb) found in repository"
@@ -219,26 +223,33 @@ class RepositoryService:
 
             # Initialize VectorStore before ingestion loop
             embedder = Embedder()
+            log_memory("BEFORE_VECTORSTORE_INIT")
             store = VectorStore(
                 collection_name=collection_name,
                 persist_dir=str(self.vector_store_path),
                 embedder=embedder,
             )
+            log_memory("AFTER_VECTORSTORE_INIT")
 
             # Clear any existing data for this collection
+            log_memory("BEFORE_STORE_CLEAR")
             try:
                 store.clear()
             except Exception:
                 pass
+            log_memory("AFTER_STORE_CLEAR")
 
             reader = FileReader(repo_root=repo_path)
             chunker = CodeChunker()
             parsed_files = []
             total_chunks = 0
+            total_files = len(code_files)
+
+            log_memory("BEFORE_FIRST_FILE", f"total_files={total_files}")
 
             # Stream chunk generation and vector store insertion per-file
             # to avoid accumulating all chunks in memory across the entire repository
-            for file_path in code_files:
+            for idx, file_path in enumerate(code_files, 1):
                 try:
                     source_file = reader.read(file_path)
 
@@ -252,15 +263,25 @@ class RepositoryService:
                         chunks = chunker.chunk(source_file, parsed_file)
 
                     if chunks:
+                        log_memory("BEFORE_ADD_CHUNKS", f"chunks={len(chunks)}")
                         store.add_chunks(chunks)
                         total_chunks += len(chunks)
+                        log_memory("AFTER_ADD_CHUNKS", f"chunks={len(chunks)} | total_chunks={total_chunks}")
 
                     parsed_files.append(parsed_file)
+
+                    if idx % 10 == 0 or idx == total_files:
+                        log_memory(
+                            "FILE_PROCESSING",
+                            f"file_num={idx} | total_files={total_files} | total_chunks={total_chunks}",
+                        )
                 except Exception:
                     continue
 
             if total_chunks == 0:
                 return False, "No code chunks extracted from repository"
+
+            log_memory("VECTOR_INGESTION_COMPLETE", f"total_chunks={total_chunks}")
 
             if progress_callback:
                 progress_callback(IndexingProgress(
@@ -283,6 +304,7 @@ class RepositoryService:
 
             # Trigger garbage collection after vector store ingestion
             gc.collect()
+            log_memory("AFTER_GC_COLLECT", "context=post_vector_ingestion")
 
             # Stage 5: Graph Building
             if progress_callback:
@@ -294,17 +316,23 @@ class RepositoryService:
                     message="Building code dependency graph...",
                 ))
 
+            log_memory("BEFORE_GRAPH_BUILD", f"parsed_files={len(parsed_files)}")
             graph_builder = CodeGraphBuilder()
             graph_builder.build_graph(parsed_files, repo_root=repo_path)
+            node_count = graph_builder.graph.number_of_nodes()
+            edge_count = graph_builder.graph.number_of_edges()
+            log_memory("GRAPH_BUILT", f"nodes={node_count} | edges={edge_count}")
 
             graph_path = repo_path / GRAPH_FILENAME
+            log_memory("BEFORE_GRAPH_PICKLE")
             with open(graph_path, "wb") as f:
                 pickle.dump(graph_builder.graph, f)
+            log_memory("AFTER_GRAPH_PICKLE")
 
-            node_count = graph_builder.graph.number_of_nodes()
             del graph_builder
             del parsed_files
             gc.collect()
+            log_memory("AFTER_GC_COLLECT", "context=post_graph_build")
 
             # Complete
             if progress_callback:
@@ -317,9 +345,11 @@ class RepositoryService:
                             f"{node_count} nodes",
                 ))
 
+            log_memory("INDEXING_READY", f"total_chunks={total_chunks} | nodes={node_count}")
             return True, None
 
         except Exception as e:
+            log_memory("INDEXING_ERROR", f"error_type={type(e).__name__}")
             if progress_callback:
                 progress_callback(IndexingProgress(
                     repo_id=repo_id,
@@ -332,6 +362,7 @@ class RepositoryService:
             return False, str(e)
         finally:
             gc.collect()
+            log_memory("INDEXING_FINALLY")
 
     def cleanup_repository(self, repo_id: str) -> None:
         """Remove a cloned repository and its data.
