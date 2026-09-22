@@ -44,7 +44,7 @@
 
 ## 📌 Overview
 
-When a developer joins a new codebase — or when an LLM is asked to answer questions about one — the real bottleneck isn't intelligence, it's **context**. Repositories are too large to fit into a single prompt, and even when they technically fit, dumping raw files into an LLM produces noisy, unfocused, often incorrect answers.
+When a developer joins a new codebase, or when an LLM is asked to answer questions about one, the real bottleneck isn't intelligence, it's **context**. Repositories are too large to fit into a single prompt, and even when they technically fit, dumping raw files into an LLM produces noisy, unfocused, often incorrect answers.
 
 **RepoMind treats a codebase like a knowledge base, not a blob of text.**
 
@@ -52,7 +52,7 @@ When a developer joins a new codebase — or when an LLM is asked to answer ques
 
 - Repos are too large for a full context dump
 - Raw file dumps bury relevant code in irrelevant noise
-- LLMs need *structured*, *relevant* context — not everything at once
+- LLMs need *structured*, *relevant* context, not everything at once
 
 ### How RepoMind Solves It
 
@@ -63,9 +63,9 @@ RepoMind parses Python repositories and Jupyter Notebooks using **AST (Abstract 
 | **Semantic Index** | *What* the code means | Embeddings + vector search |
 | **Code Graph** | *How* the code connects | Files, functions, classes, imports, calls |
 
-When a user asks a question, an **LLM-powered ReAct agent** doesn't answer from memory alone — it reasons about the question, calls retrieval tools to pull relevant code from both the semantic index and the graph, then generates an answer grounded in that retrieved context.
+When a user asks a question, an **LLM-powered ReAct agent** doesn't answer from memory alone, it reasons about the question, calls retrieval tools to pull relevant code from both the semantic index and the graph, then generates an answer grounded in that retrieved context.
 
-> This mirrors how a human engineer explores an unfamiliar codebase: search for relevant code, trace how it connects, reason from there — rather than memorizing the entire project at once.
+> This mirrors how a human engineer explores an unfamiliar codebase: search for relevant code, trace how it connects, reason from there, rather than memorizing the entire project at once.
 
 RepoMind ships as both a **CLI tool** for quick terminal use and a full **web application** with real-time indexing progress and streaming responses.
 
@@ -89,22 +89,22 @@ Answer
 
 ## 🎯 Objective
 
-The core motivation behind RepoMind is to move beyond naive "paste the whole repo into the prompt" approaches to code Q&A, which break down quickly as repositories grow — they're expensive, hit context limits, and bury the relevant code in irrelevant noise.
+The core motivation behind RepoMind is to move beyond naive "paste the whole repo into the prompt" approaches to code Q&A, which break down quickly as repositories grow: they're expensive, hit context limits, and bury the relevant code in irrelevant noise.
 
 RepoMind's objective is to build a **retrieval-first system** that identifies and surfaces only the code that actually matters for a given question, using two complementary retrieval signals:
 
 ```text
-Semantic Retrieval  → conceptually related code (embeddings)
-Graph Retrieval      → structurally related code (imports/calls/definitions)
+Semantic Retrieval  -> conceptually related code (embeddings)
+Graph Retrieval      -> structurally related code (imports/calls/definitions)
 ```
 
 Specifically, the project aims to:
 
 - Represent a codebase in a way that's both **searchable by meaning** and **traceable by structure**
-- Let an agent **reason iteratively** — retrieve, inspect, retrieve again — instead of answering in a single blind pass
+- Let an agent **reason iteratively**: retrieve, inspect, retrieve again, instead of answering in a single blind pass
 - Keep retrieval **measurable**, using standard IR metrics (Precision@k, Recall@k, MRR, nDCG@k) rather than relying on subjective "it looks right" judgments
 - Support both **Python scripts and Jupyter Notebooks**, since real-world ML/data science repos mix both
-- Stay usable at a **practical scale** — a CLI for fast local use and a web app for a fuller interactive experience
+- Stay usable at a **practical scale**: a CLI for fast local use and a web app for a fuller interactive experience
 
 ---
 
@@ -145,7 +145,7 @@ ChromaDB        │
       Answer
 ```
 
-The ReAct agent reasons about the question, calls retrieval tools (semantic search + graph traversal), observes the results, and iterates before producing a final grounded answer — rather than relying on one large uncontrolled context dump.
+The ReAct agent reasons about the question, calls retrieval tools (semantic search + graph traversal), observes the results, and iterates before producing a final grounded answer, rather than relying on one large uncontrolled context dump.
 
 ---
 
@@ -156,21 +156,21 @@ The ReAct agent reasons about the question, calls retrieval tools (semantic sear
 | **Semantic Retrieval** | Conceptually related code | Question → embedding → vector similarity search |
 | **Graph Retrieval** | Structurally related code | File/symbol graph: imports, calls, definitions |
 
-Combining both gives more reliable context than either alone — semantic search catches conceptual matches even with different wording, while graph retrieval catches direct dependencies semantic search would miss.
+Combining both gives more reliable context than either alone: semantic search catches conceptual matches even with different wording, while graph retrieval catches direct dependencies semantic search would miss.
 
 ---
 
 ## ✨ Features
 
-- **AST-based code analysis** — functions, classes, imports, calls, decorators, docstrings
-- **Jupyter Notebook support** — code + Markdown cells, IPython magics, ignores outputs
-- **Logical chunking** — splits around meaningful code structures, not arbitrary text
-- **Code graph** — NetworkX graph of files, symbols, imports, calls, definitions
-- **ReAct agent** — tool-based reasoning loop for retrieval and analysis
-- **Web app** — React + TypeScript frontend, FastAPI backend, real-time streaming
-- **CLI** — index repos and ask natural-language questions
-- **Retrieval evaluation** — Precision@k, Recall@k, MRR, nDCG@k, R-Precision
-- **Docker support** — containerized backend with Docker Compose
+- **AST-based code analysis**: functions, classes, imports, calls, decorators, docstrings
+- **Jupyter Notebook support**: code + Markdown cells, IPython magics, ignores outputs
+- **Logical chunking**: splits around meaningful code structures, not arbitrary text
+- **Code graph**: NetworkX graph of files, symbols, imports, calls, definitions
+- **ReAct agent**: tool-based reasoning loop for retrieval and analysis
+- **Web app**: React + TypeScript frontend, FastAPI backend, real-time streaming
+- **CLI**: index repos and ask natural-language questions
+- **Retrieval evaluation**: Precision@k, Recall@k, MRR, nDCG@k, R-Precision
+- **Docker support**: containerized backend with Docker Compose
 
 ---
 
@@ -232,7 +232,7 @@ repomind ask ./my-project "How does authentication work?"
 Or run the web app:
 
 ```bash
-python -m repomind.api.main        # backend → localhost:8000
+python -m repomind.api.main        # backend on localhost:8000
 cd frontend && npm install && npm run dev
 ```
 
@@ -272,7 +272,7 @@ Real-time updates stream via Server-Sent Events. Full interactive docs at `http:
 ## ⚠️ Limitations
 
 - Parsing pipeline currently focuses on **Python** and Python-based notebooks
-- **No incremental indexing** — full re-index on changes, not just changed files
+- **No incremental indexing**: full re-index on changes, not just changed files
 - Vector and graph data are stored **locally**
 - Answer quality depends on Gemini's availability, quotas, and the quality of retrieved context
 - Retrieved context improves grounding but does not guarantee fully correct answers
