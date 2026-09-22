@@ -11,11 +11,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     git \
     && rm -rf /var/lib/apt/lists/*
 
-# Install CPU-only PyTorch first from official PyTorch wheel index
-# so sentence-transformers reuses this CPU build instead of pulling CUDA/NVIDIA wheels
-RUN pip install --no-cache-dir --timeout 300 --retries 5 \
-    torch --index-url https://download.pytorch.org/whl/cpu
-
 # Copy Python package definition and install RepoMind dependencies
 COPY pyproject.toml .
 RUN pip install --no-cache-dir --timeout 300 --retries 5 -e .
