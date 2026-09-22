@@ -21,11 +21,12 @@ def test_get_current_rss_mb_fallback_on_error():
 
 
 def test_log_memory_formats_message(caplog):
-    """log_memory should format log messages with PID, stage, and RSS."""
-    with caplog.at_level("INFO", logger="repomind.utils"):
+    """log_memory should format log messages with PID, stage, and RSS at WARNING level."""
+    with caplog.at_level("WARNING", logger="repomind.utils"):
         log_memory("TEST_STAGE", "chunks=5")
         assert len(caplog.records) == 1
         record = caplog.records[0]
+        assert record.levelname == "WARNING"
         assert f"pid={os.getpid()}" in record.message
         assert "stage=TEST_STAGE" in record.message
         assert "rss_mb=" in record.message

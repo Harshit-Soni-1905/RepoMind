@@ -34,6 +34,10 @@ def log_memory(stage: str, extra: Optional[str] = None) -> None:
     Emits structured log messages in the format:
     MEMORY | pid=<PID> | stage=<STAGE> | rss_mb=<MB> [| <EXTRA>]
 
+    Emitted at WARNING level so that standard root loggers in container
+    and production runtime environments capture and forward the telemetry
+    without requiring custom handler reconfiguration.
+
     Args:
         stage: Current execution lifecycle stage
         extra: Optional additional key-value string (e.g., 'chunks=10')
@@ -43,4 +47,4 @@ def log_memory(stage: str, extra: Optional[str] = None) -> None:
     msg = f"MEMORY | pid={pid} | stage={stage} | rss_mb={rss_mb}"
     if extra:
         msg = f"{msg} | {extra}"
-    logger.info(msg)
+    logger.warning(msg)
