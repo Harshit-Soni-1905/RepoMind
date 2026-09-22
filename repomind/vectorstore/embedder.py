@@ -34,6 +34,18 @@ class Embedder:
         """Load the sentence-transformers model if not already loaded."""
         # Check if we need to load or reload the model
         if Embedder._model is None or Embedder._model_name != self.model_name:
+            import os
+            try:
+                import torch
+                torch_threads = int(os.getenv("REPOMIND_TORCH_THREADS", "1"))
+                torch.set_num_threads(torch_threads)
+                try:
+                    torch.set_num_interop_threads(torch_threads)
+                except Exception:
+                    pass
+            except ImportError:
+                pass
+
             from sentence_transformers import SentenceTransformer
             Embedder._model = SentenceTransformer(self.model_name)
             Embedder._model_name = self.model_name

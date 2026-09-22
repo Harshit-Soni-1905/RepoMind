@@ -7,6 +7,7 @@ from datetime import datetime
 import logging
 from concurrent.futures import ThreadPoolExecutor
 
+from repomind.config import config
 from repomind.application.models import JobStatus, IndexingProgress
 from repomind.application.repo_service import RepositoryService
 
@@ -19,16 +20,17 @@ class JobManager:
     def __init__(
         self,
         repo_service: Optional[RepositoryService] = None,
-        max_workers: int = 4,
+        max_workers: Optional[int] = None,
     ):
         """Initialize job manager.
 
         Args:
             repo_service: Repository service instance
-            max_workers: Max concurrent indexing workers
+            max_workers: Max concurrent indexing workers (defaults to config.MAX_INDEXING_WORKERS)
         """
         self.repo_service = repo_service or RepositoryService()
-        self.executor = ThreadPoolExecutor(max_workers=max_workers)
+        workers = max_workers if max_workers is not None else config.MAX_INDEXING_WORKERS
+        self.executor = ThreadPoolExecutor(max_workers=workers)
         self.jobs: Dict[str, IndexingProgress] = {}
         self.listeners: Dict[str, List[Callable[[IndexingProgress], None]]] = {}
         self._lock = threading.Lock()

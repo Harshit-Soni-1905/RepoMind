@@ -66,6 +66,11 @@ class CodeGraphBuilder:
         for parsed_file in parsed_files:
             self._add_call_edges(parsed_file)
 
+        # Clear temporary lookup dictionaries to free memory after graph build completes
+        self._module_map.clear()
+        self._symbol_map.clear()
+        self._file_nodes.clear()
+
         return self.graph
 
     def _build_symbol_map(self, parsed_file: ParsedFile) -> None:

@@ -101,7 +101,7 @@ class Config:
     DATA_DIR: Path = Path(
         os.getenv("REPOMIND_DATA_DIR", "./.repomind_data")
     )
-    MAX_INDEXING_WORKERS: int = int(os.getenv("REPOMIND_MAX_WORKERS", "4"))
+    MAX_INDEXING_WORKERS: int = int(os.getenv("REPOMIND_MAX_WORKERS", "1"))
     RATE_LIMIT_PER_MINUTE: int = int(os.getenv("REPOMIND_RATE_LIMIT", "60"))
 
     @classmethod

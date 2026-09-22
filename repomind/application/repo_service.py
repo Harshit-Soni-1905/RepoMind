@@ -4,6 +4,7 @@ This service extracts the core indexing orchestration logic from cli/commands.py
 (Stage 8) to make it reusable by both the CLI and the new web API (Stage 10).
 """
 
+import gc
 import pickle
 import shutil
 import tempfile
@@ -216,51 +217,7 @@ class RepositoryService:
                     message=f"Parsing {len(code_files)} code files...",
                 ))
 
-            reader = FileReader(repo_root=repo_path)
-            chunker = CodeChunker()
-            all_chunks = []
-            parsed_files = []
-
-            for file_path in code_files:
-                try:
-                    source_file = reader.read(file_path)
-
-                    # Route .ipynb through NotebookParser, .py through standard parser
-                    if file_path.suffix == ".ipynb":
-                        parsed_file, chunks = parse_notebook(source_file.content, source_file.relative_path)
-                    else:
-                        parsed_file = parse_source(source_file.content, source_file.relative_path)
-                        if parsed_file.has_syntax_error:
-                            continue
-                        chunks = chunker.chunk(source_file, parsed_file)
-
-                    all_chunks.extend(chunks)
-                    parsed_files.append(parsed_file)
-                except Exception:
-                    continue
-
-            if not all_chunks:
-                return False, "No code chunks extracted from repository"
-
-            if progress_callback:
-                progress_callback(IndexingProgress(
-                    repo_id=repo_id,
-                    job_id=repo_id,
-                    status=JobStatus.CHUNKING,
-                    progress=50,
-                    message=f"Extracted {len(all_chunks)} code chunks",
-                ))
-
-            # Stage 4: Embedding
-            if progress_callback:
-                progress_callback(IndexingProgress(
-                    repo_id=repo_id,
-                    job_id=repo_id,
-                    status=JobStatus.EMBEDDING,
-                    progress=65,
-                    message="Generating embeddings...",
-                ))
-
+            # Initialize VectorStore before ingestion loop
             embedder = Embedder()
             store = VectorStore(
                 collection_name=collection_name,
@@ -274,7 +231,58 @@ class RepositoryService:
             except Exception:
                 pass
 
-            store.add_chunks(all_chunks)
+            reader = FileReader(repo_root=repo_path)
+            chunker = CodeChunker()
+            parsed_files = []
+            total_chunks = 0
+
+            # Stream chunk generation and vector store insertion per-file
+            # to avoid accumulating all chunks in memory across the entire repository
+            for file_path in code_files:
+                try:
+                    source_file = reader.read(file_path)
+
+                    # Route .ipynb through NotebookParser, .py through standard parser
+                    if file_path.suffix == ".ipynb":
+                        parsed_file, chunks = parse_notebook(source_file.content, source_file.relative_path)
+                    else:
+                        parsed_file = parse_source(source_file.content, source_file.relative_path)
+                        if parsed_file.has_syntax_error:
+                            continue
+                        chunks = chunker.chunk(source_file, parsed_file)
+
+                    if chunks:
+                        store.add_chunks(chunks)
+                        total_chunks += len(chunks)
+
+                    parsed_files.append(parsed_file)
+                except Exception:
+                    continue
+
+            if total_chunks == 0:
+                return False, "No code chunks extracted from repository"
+
+            if progress_callback:
+                progress_callback(IndexingProgress(
+                    repo_id=repo_id,
+                    job_id=repo_id,
+                    status=JobStatus.CHUNKING,
+                    progress=50,
+                    message=f"Extracted {total_chunks} code chunks",
+                ))
+
+            # Stage 4: Embedding / Vector indexing complete
+            if progress_callback:
+                progress_callback(IndexingProgress(
+                    repo_id=repo_id,
+                    job_id=repo_id,
+                    status=JobStatus.EMBEDDING,
+                    progress=65,
+                    message=f"Vector indexing complete ({total_chunks} chunks embedded)",
+                ))
+
+            # Trigger garbage collection after vector store ingestion
+            gc.collect()
 
             # Stage 5: Graph Building
             if progress_callback:
@@ -293,6 +301,11 @@ class RepositoryService:
             with open(graph_path, "wb") as f:
                 pickle.dump(graph_builder.graph, f)
 
+            node_count = graph_builder.graph.number_of_nodes()
+            del graph_builder
+            del parsed_files
+            gc.collect()
+
             # Complete
             if progress_callback:
                 progress_callback(IndexingProgress(
@@ -301,7 +314,7 @@ class RepositoryService:
                     status=JobStatus.READY,
                     progress=100,
                     message=f"Indexing complete: {store.count()} chunks, "
-                            f"{graph_builder.graph.number_of_nodes()} nodes",
+                            f"{node_count} nodes",
                 ))
 
             return True, None
@@ -317,6 +330,8 @@ class RepositoryService:
                     error=str(e),
                 ))
             return False, str(e)
+        finally:
+            gc.collect()
 
     def cleanup_repository(self, repo_id: str) -> None:
         """Remove a cloned repository and its data.
