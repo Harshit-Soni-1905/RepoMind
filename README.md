@@ -7,6 +7,10 @@
 </p>
 
 <p align="center">
+  <a href="https://repomind-frontend-o43b.onrender.com/">
+    🚀 <b>Live Demo</b>
+  </a>
+  &nbsp;|&nbsp;
   <a href="https://github.com/Harshit-Soni-1905/RepoMind">
     📂 <b>Repository</b>
   </a>
@@ -172,6 +176,7 @@ Combining both gives more reliable context than either alone — semantic search
 | Real-time Updates | Server-Sent Events |
 | Testing | pytest |
 | Containerization | Docker |
+| Deployment | Render |
 
 ---
 
