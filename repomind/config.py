@@ -60,6 +60,8 @@ class Config:
     ).lower() == "true"
 
     # ===== Ingestion Configuration =====
+    # Supported file extensions for code ingestion
+    SUPPORTED_EXTENSIONS: set = {".py", ".ipynb"}
     # Maximum file size to process (in bytes)
     MAX_FILE_SIZE: int = int(os.getenv("REPOMIND_MAX_FILE_SIZE", str(1024 * 1024)))  # 1 MB
     # Directories to always skip

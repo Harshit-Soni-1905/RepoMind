@@ -22,6 +22,7 @@ from repomind.ingestion.file_reader import FileReader
 # Stage 2 parsing exposes a module-level `parse(source, filepath)` function,
 # not a class, so we alias it for clarity at the call site.
 from repomind.parsing.ast_parser import parse as parse_source
+from repomind.parsing.notebook_parser import parse_notebook
 from repomind.chunking.chunker import CodeChunker
 from repomind.vectorstore.embedder import Embedder as CodeEmbedder
 from repomind.vectorstore.store import VectorStore
@@ -55,7 +56,7 @@ def load_graph(path: Path) -> nx.DiGraph:
 
 
 def validate_repository_path(repo_path_str: str, formatter: CLIFormatter) -> Path:
-    """Validate that the repository path exists, is a directory, and has Python files.
+    """Validate that the repository path exists, is a directory, and has supported code files.
 
     Args:
         repo_path_str: Raw string path to repository
@@ -75,12 +76,12 @@ def validate_repository_path(repo_path_str: str, formatter: CLIFormatter) -> Pat
     if not repo_path.is_dir():
         raise ValueError(f"Repository path is not a directory: {repo_path}")
 
-    # Confirm there is at least one Python file to work with.
+    # Confirm there is at least one supported code file to work with.
     scanner = RepoScanner(root_path=repo_path)
-    py_files = scanner.scan()
+    code_files = scanner.scan()
 
-    if not py_files:
-        raise ValueError(f"No Python files found in repository: {repo_path}")
+    if not code_files:
+        raise ValueError(f"No supported code files (.py, .ipynb) found in repository: {repo_path}")
 
     return repo_path
 
@@ -106,10 +107,12 @@ def run_index_command(
         formatter.info(f"Validating repository at: {repo_path_str}")
         repo_path = validate_repository_path(repo_path_str, formatter)
 
-        formatter.info("Stage 1: Scanning Python files...")
+        formatter.info("Stage 1: Scanning code files...")
         scanner = RepoScanner(root_path=repo_path)
-        py_files = scanner.scan()
-        formatter.info(f"Found {len(py_files)} Python files.")
+        code_files = scanner.scan()
+        py_count = sum(1 for f in code_files if f.suffix == ".py")
+        ipynb_count = sum(1 for f in code_files if f.suffix == ".ipynb")
+        formatter.info(f"Found {len(code_files)} code files ({py_count} .py, {ipynb_count} .ipynb).")
 
         formatter.info("Stage 2 & 3: Reading, parsing AST, and chunking code...")
         reader = FileReader(repo_root=repo_path)
@@ -118,22 +121,27 @@ def run_index_command(
         all_chunks = []
         parsed_files = []
 
-        for file_path in py_files:
+        for file_path in code_files:
             try:
                 source_file = reader.read(file_path)
-                parsed_file = parse_source(source_file.content, source_file.relative_path)
 
-                # parse_source reports syntax errors by returning a flagged
-                # ParsedFile rather than raising, so the except branch below
-                # never sees them. Without this check a broken file would be
-                # indexed as an empty file and silently degrade retrieval.
-                if parsed_file.has_syntax_error:
-                    formatter.warning(
-                        f"Skipping {file_path}: {parsed_file.syntax_error_message}"
-                    )
-                    continue
+                # Route .ipynb through NotebookParser, .py through standard parser
+                if file_path.suffix == ".ipynb":
+                    parsed_file, chunks = parse_notebook(source_file.content, source_file.relative_path)
+                else:
+                    parsed_file = parse_source(source_file.content, source_file.relative_path)
 
-                chunks = chunker.chunk(source_file, parsed_file)
+                    # parse_source reports syntax errors by returning a flagged
+                    # ParsedFile rather than raising, so the except branch below
+                    # never sees them. Without this check a broken file would be
+                    # indexed as an empty file and silently degrade retrieval.
+                    if parsed_file.has_syntax_error:
+                        formatter.warning(
+                            f"Skipping {file_path}: {parsed_file.syntax_error_message}"
+                        )
+                        continue
+                    chunks = chunker.chunk(source_file, parsed_file)
+
                 all_chunks.extend(chunks)
                 parsed_files.append(parsed_file)
             except Exception as e:

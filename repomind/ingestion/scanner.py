@@ -1,7 +1,7 @@
-"""Repository scanner: discovers Python files in a directory tree.
+"""Repository scanner: discovers code files in a directory tree.
 
-This module walks a repository directory, finds all .py files, and respects
-.gitignore patterns and configured skip directories.
+This module walks a repository directory, finds all supported code files (.py, .ipynb),
+and respects .gitignore patterns and configured skip directories.
 """
 
 from pathlib import Path
@@ -12,10 +12,10 @@ from repomind.config import config
 
 
 class RepositoryScanner:
-    """Scans a repository directory for Python source files.
+    """Scans a repository directory for code source files.
 
     Respects .gitignore patterns and skips common non-source directories
-    like __pycache__, .venv, .git, etc.
+    like __pycache__, .venv, .git, etc. Supports .py and .ipynb files.
     """
 
     def __init__(self, root_path: Path):
@@ -93,8 +93,8 @@ class RepositoryScanner:
         Returns:
             True if file should be included, False otherwise
         """
-        # Only include .py files
-        if file_path.suffix != ".py":
+        # Only include supported extensions (.py, .ipynb)
+        if file_path.suffix not in config.SUPPORTED_EXTENSIONS:
             return False
 
         # Check .gitignore patterns
@@ -110,17 +110,11 @@ class RepositoryScanner:
         return True
 
     def scan(self) -> List[Path]:
-        """Scan the repository and return all Python files.
+        """Scan the repository and return all supported code files (.py, .ipynb).
 
         Returns:
-            List of absolute Path objects for all discovered .py files,
+            List of absolute Path objects for all discovered code files,
             sorted lexicographically for deterministic results
-
-        Example:
-            >>> scanner = RepositoryScanner(Path("/path/to/repo"))
-            >>> python_files = scanner.scan()
-            >>> print(python_files[0])
-            /path/to/repo/src/main.py
         """
         python_files: List[Path] = []
 
@@ -157,20 +151,20 @@ class RepositoryScanner:
 
 
 def scan_repository(repo_path: Path) -> List[Path]:
-    """Convenience function to scan a repository for Python files.
+    """Convenience function to scan a repository for supported code files (.py, .ipynb).
 
     Args:
         repo_path: Root directory of repository
 
     Returns:
-        List of absolute Path objects for all .py files found
+        List of absolute Path objects for all .py and .ipynb files found
 
     Raises:
         ValueError: If repo_path doesn't exist or isn't a directory
 
     Example:
         >>> files = scan_repository(Path("./my_project"))
-        >>> print(f"Found {len(files)} Python files")
+        >>> print(f"Found {len(files)} code files")
     """
     scanner = RepositoryScanner(repo_path)
     return scanner.scan()

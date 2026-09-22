@@ -105,17 +105,56 @@ def test_scanner_skips_venv(sample_repo):
 
 
 def test_scanner_skips_non_python_files(sample_repo):
-    """Scanner should only return .py files."""
+    """Scanner should only return supported code files (.py, .ipynb)."""
     scanner = RepositoryScanner(sample_repo)
     files = scanner.scan()
 
-    # All files should have .py extension
+    # All files should have supported extensions
     for f in files:
-        assert f.suffix == ".py"
+        assert f.suffix in {".py", ".ipynb"}
 
     # Check that README.md is not included
     rel_files = [f.relative_to(sample_repo) for f in files]
     assert Path("docs/README.md") not in rel_files
+
+
+def test_scanner_finds_notebook_files(tmp_path):
+    """Scanner should find both .py and .ipynb files."""
+    repo = tmp_path / "notebook_repo"
+    repo.mkdir()
+
+    (repo / "script.py").write_text("print('hello')")
+    (repo / "analysis.ipynb").write_text('{"cells": []}')
+    (repo / "notes.txt").write_text("some notes")
+
+    scanner = RepositoryScanner(repo)
+    files = scanner.scan()
+
+    rel_files = [f.relative_to(repo) for f in files]
+    rel_files_str = [str(f).replace("\\", "/") for f in rel_files]
+
+    assert "script.py" in rel_files_str
+    assert "analysis.ipynb" in rel_files_str
+    assert "notes.txt" not in rel_files_str
+
+
+def test_scanner_finds_notebook_only_repo(tmp_path):
+    """Scanner should find .ipynb files in a notebook-only repository."""
+    repo = tmp_path / "notebook_only_repo"
+    repo.mkdir()
+
+    (repo / "data_prep.ipynb").write_text('{"cells": []}')
+    (repo / "model_training.ipynb").write_text('{"cells": []}')
+
+    scanner = RepositoryScanner(repo)
+    files = scanner.scan()
+
+    rel_files = [f.relative_to(repo) for f in files]
+    rel_files_str = [str(f).replace("\\", "/") for f in rel_files]
+
+    assert "data_prep.ipynb" in rel_files_str
+    assert "model_training.ipynb" in rel_files_str
+    assert len(files) == 2
 
 
 def test_scanner_respects_gitignore(tmp_path):

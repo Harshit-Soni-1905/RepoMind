@@ -369,7 +369,7 @@ class TestValidateRepositoryPath:
 
     def test_empty_repo_raises_error(self, empty_repo, mock_formatter):
         """Repository with no Python files should raise ValueError."""
-        with pytest.raises(ValueError, match="No Python files found"):
+        with pytest.raises(ValueError, match="No supported code files"):
             validate_repository_path(str(empty_repo), mock_formatter)
 
 

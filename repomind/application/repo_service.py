@@ -24,6 +24,7 @@ from repomind.config import config
 from repomind.ingestion.scanner import RepositoryScanner
 from repomind.ingestion.file_reader import FileReader
 from repomind.parsing.ast_parser import parse as parse_source
+from repomind.parsing.notebook_parser import parse_notebook
 from repomind.chunking.chunker import CodeChunker
 from repomind.vectorstore.embedder import Embedder
 from repomind.vectorstore.store import VectorStore
@@ -125,9 +126,15 @@ class RepositoryService:
                 check=True,
             )
 
-            # Verify the clone succeeded and has Python files
-            if not clone_path.exists() or not any(clone_path.rglob("*.py")):
-                return False, None, "No Python files found in repository"
+            # Verify the clone succeeded and has supported code files
+            if not clone_path.exists():
+                return False, None, "Repository clone failed"
+
+            has_supported_files = any(
+                any(clone_path.rglob(f"*{ext}")) for ext in config.SUPPORTED_EXTENSIONS
+            )
+            if not has_supported_files:
+                return False, None, "No supported code files (.py, .ipynb) found in repository"
 
             return True, clone_path, None
 
@@ -147,13 +154,15 @@ class RepositoryService:
         Returns:
             Tuple of (is_valid, error_message)
         """
-        py_files = list(repo_path.rglob("*.py"))
+        code_files = []
+        for ext in config.SUPPORTED_EXTENSIONS:
+            code_files.extend(repo_path.rglob(f"*{ext}"))
 
-        if len(py_files) > MAX_FILES_LIMIT:
-            return False, f"Repository exceeds {MAX_FILES_LIMIT} file limit ({len(py_files)} files)"
+        if len(code_files) > MAX_FILES_LIMIT:
+            return False, f"Repository exceeds {MAX_FILES_LIMIT} file limit ({len(code_files)} files)"
 
         # Calculate total size
-        total_size = sum(f.stat().st_size for f in py_files if f.is_file())
+        total_size = sum(f.stat().st_size for f in code_files if f.is_file())
         total_mb = total_size / (1024 * 1024)
 
         if total_mb > MAX_REPO_SIZE_MB:
@@ -188,14 +197,14 @@ class RepositoryService:
                     job_id=repo_id,
                     status=JobStatus.SCANNING,
                     progress=15,
-                    message="Scanning Python files...",
+                    message="Scanning code files...",
                 ))
 
             scanner = RepositoryScanner(root_path=repo_path)
-            py_files = scanner.scan()
+            code_files = scanner.scan()
 
-            if not py_files:
-                return False, "No Python files found in repository"
+            if not code_files:
+                return False, "No supported code files (.py, .ipynb) found in repository"
 
             # Stage 2 & 3: Parsing and Chunking
             if progress_callback:
@@ -204,7 +213,7 @@ class RepositoryService:
                     job_id=repo_id,
                     status=JobStatus.PARSING,
                     progress=30,
-                    message=f"Parsing {len(py_files)} Python files...",
+                    message=f"Parsing {len(code_files)} code files...",
                 ))
 
             reader = FileReader(repo_root=repo_path)
@@ -212,15 +221,19 @@ class RepositoryService:
             all_chunks = []
             parsed_files = []
 
-            for file_path in py_files:
+            for file_path in code_files:
                 try:
                     source_file = reader.read(file_path)
-                    parsed_file = parse_source(source_file.content, source_file.relative_path)
 
-                    if parsed_file.has_syntax_error:
-                        continue
+                    # Route .ipynb through NotebookParser, .py through standard parser
+                    if file_path.suffix == ".ipynb":
+                        parsed_file, chunks = parse_notebook(source_file.content, source_file.relative_path)
+                    else:
+                        parsed_file = parse_source(source_file.content, source_file.relative_path)
+                        if parsed_file.has_syntax_error:
+                            continue
+                        chunks = chunker.chunk(source_file, parsed_file)
 
-                    chunks = chunker.chunk(source_file, parsed_file)
                     all_chunks.extend(chunks)
                     parsed_files.append(parsed_file)
                 except Exception:

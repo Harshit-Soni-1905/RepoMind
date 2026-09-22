@@ -11,7 +11,7 @@ from repomind.application.models import JobStatus
 @pytest.fixture
 def repo_service():
     """Create a repository service with temporary storage."""
-    with tempfile.TemporaryDirectory() as tmpdir:
+    with tempfile.TemporaryDirectory(ignore_cleanup_errors=True) as tmpdir:
         yield RepositoryService(
             storage_root=Path(tmpdir) / "repos",
             vector_store_path=Path(tmpdir) / "vectorstore",
@@ -94,3 +94,69 @@ def test_validate_repository_size_too_many_files(repo_service, tmp_path):
     is_valid, error = repo_service.validate_repository_size(tmp_path)
     assert is_valid is False
     assert "file limit" in error.lower()
+
+
+def test_index_repository_with_notebooks(repo_service, tmp_path):
+    """Test indexing a repository containing only Jupyter Notebooks."""
+    import json
+    repo_dir = tmp_path / "notebook_repo"
+    repo_dir.mkdir()
+
+    nb_data = {
+        "cells": [
+            {
+                "cell_type": "markdown",
+                "source": ["# Title\n", "Intro text"]
+            },
+            {
+                "cell_type": "code",
+                "source": [
+                    "def process_data(df):\n",
+                    "    return df.describe()\n"
+                ]
+            }
+        ],
+        "metadata": {}
+    }
+    (repo_dir / "notebook.ipynb").write_text(json.dumps(nb_data))
+
+    success, error = repo_service.index_repository(repo_dir, repo_id="nb-repo-1")
+    assert success is True
+    assert error is None
+
+    # Verify graph was saved and has the function
+    graph = repo_service.load_graph(repo_dir)
+    assert graph is not None
+    assert graph.number_of_nodes() > 0
+
+
+def test_index_repository_mixed_py_and_ipynb(repo_service, tmp_path):
+    """Test indexing a repository containing both .py and .ipynb files."""
+    import json
+    repo_dir = tmp_path / "mixed_repo"
+    repo_dir.mkdir()
+
+    (repo_dir / "helper.py").write_text("def helper_func(): return 42\n")
+
+    nb_data = {
+        "cells": [
+            {
+                "cell_type": "code",
+                "source": [
+                    "from helper import helper_func\n",
+                    "val = helper_func()\n"
+                ]
+            }
+        ],
+        "metadata": {}
+    }
+    (repo_dir / "main.ipynb").write_text(json.dumps(nb_data))
+
+    success, error = repo_service.index_repository(repo_dir, repo_id="mixed-repo-1")
+    assert success is True
+    assert error is None
+
+    graph = repo_service.load_graph(repo_dir)
+    assert graph is not None
+    assert graph.number_of_nodes() > 0
+
