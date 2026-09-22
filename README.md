@@ -273,21 +273,7 @@ Real-time updates stream via Server-Sent Events. Full interactive docs at `http:
 
 - Parsing pipeline currently focuses on **Python** and Python-based notebooks
 - **No incremental indexing**: full re-index on changes, not just changed files
-- Vector and graph data are stored **locally**
-- Answer quality depends on Gemini's availability, quotas, and the quality of retrieved context
-- Retrieved context improves grounding but does not guarantee fully correct answers
 
----
-
-## 🔮 Future Improvements
-
-- Incremental repository indexing
-- Support for additional programming languages
-- Retrieval reranking
-- Persistent managed vector storage
-- Authentication and authorization for public deployments
-- Line-level answer grounding
-- Git history-aware code understanding
 
 ---
 
