@@ -273,7 +273,7 @@ Real-time updates stream via Server-Sent Events. Full interactive docs at `http:
 
 - Parsing pipeline currently focuses on **Python** and Python-based notebooks
 - **No incremental indexing**: full re-index on changes, not just changed files
-- The indexing process may take some time for certain repositories, Therefore **Have Patience**
+- The indexing process may take some time for certain repositories, Therefore **""Have Patience""**
 
 
 ---
